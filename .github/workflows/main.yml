@@ -12,7 +12,7 @@ jobs:
         run: |
           npm install @11ty/eleventy
           npm install @11ty/eleventy-navigation
-          npm install moment
+          npm install
           npx @11ty/eleventy
           aws s3 cp \
             --recursive \
