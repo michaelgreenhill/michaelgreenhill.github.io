@@ -5,11 +5,15 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
+      - name: install
+        run: |
+          npm install
       - name: up
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
+          npm install 
           npx @11ty/eleventy
           aws s3 cp \
             --recursive \
