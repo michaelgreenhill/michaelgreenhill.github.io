@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/michaelgreenhill/michaelgreenhill.github.ioo#readme",
   "dependencies": {
-    "@11ty/eleventy-navigation": "^0.1.5"
+    "@11ty/eleventy-navigation": "^0.1.5",
+    "moment": "^2.24.0"
   },
   "devDependencies": {}
 }
