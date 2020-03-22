@@ -1,7 +1,7 @@
 ---
 title: Night photography - Part 1
 subtitle: A look into my photographic process, starting with natural lighting.
-permalink: "{{ title | slug }}/"
+permalink: "{{ title | slug }}"
 heroimage: https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/38686053_10156533096574291_7731714059409555456_o.jpg
 tags:
   - post
