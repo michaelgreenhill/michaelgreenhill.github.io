@@ -1,0 +1,9 @@
+#!/bin/bash
+
+printf "\n🚀  deploy\n"
+printf "\n"
+aws s3 cp \
+  --recursive \
+  --acl public-read \
+  --region ap-southeast-2 \
+  ./_site/ s3://michaelgreenhill-net

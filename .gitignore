@@ -1,5 +1,5 @@
 _site/*
-deploy
+deploy/*
 node_modules/*
 package-lock.json
 .vscode/*
