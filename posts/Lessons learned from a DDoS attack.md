@@ -1,7 +1,7 @@
 ---
 title: Lessons learned from a DDoS attack
 subtitle: Our website got nay-nayed
-permalink: "{{ title | slug }}"
+permalink: "{{ title | slug }}/"
 heroimage: https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/ddos.png
 tags:
   - post

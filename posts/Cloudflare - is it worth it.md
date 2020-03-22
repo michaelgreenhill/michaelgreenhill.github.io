@@ -1,7 +1,7 @@
 ---
 title: Cloudflare - is it worth it?
 subtitle: I don't have time for your slow website proxying!
-permalink: "{{ title | slug }}"
+permalink: "{{ title | slug }}/"
 heroimage: https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/cloudflare1250-1.png
 tags:
   - post
