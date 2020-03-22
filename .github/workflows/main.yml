@@ -5,17 +5,17 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
-      - name: up
+        with:
+          ref: refs/heads/master
+      - name: install
+        run: |
+          npm install
+      - name: build
+        run: |
+          npm run build
+      - name: deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          npm install @11ty/eleventy
-          npm install @11ty/eleventy-navigation
-          npm install
-          npx @11ty/eleventy
-          aws s3 cp \
-            --recursive \
-            --acl public-read \
-            --region ap-southeast-2 \
-            ./_site/ [s3://michaelgreenhill-net]
+          npm run deploy

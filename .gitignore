@@ -1,1 +1,6 @@
 _site/*
+deploy
+node_modules/*
+package-lock.json
+.vscode/*
+secrets

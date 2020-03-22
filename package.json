@@ -1,0 +1,28 @@
+{
+  "name": "michaelgreenhill.github.io",
+  "version": "1.0.0",
+  "description": "for https://michaelgreenhill.net",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "npx @11ty/eleventy --serve",
+    "build": "echo '💯  build\n'; npx @11ty/eleventy",
+    "deploy": "./deploy",
+    "up": "npm run build && npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelgreenhill/michaelgreenhill.github.io"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelgreenhill/michaelgreenhill.github.io/issues"
+  },
+  "homepage": "https://github.com/michaelgreenhill/michaelgreenhill.github.ioo#readme",
+  "dependencies": {
+    "@11ty/eleventy-navigation": "^0.1.5"
+  },
+  "devDependencies": {}
+}
