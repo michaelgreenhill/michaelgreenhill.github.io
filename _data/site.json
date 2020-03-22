@@ -1,0 +1,13 @@
+{
+  "title": "Michael Greenhill",
+  "subtitle": "IT and Photography",
+  "url": "https://michaelgreenhill.net",
+  "social": {
+    "facebook": "https://facebook.com/aspect19"
+  },
+  "baseurl": "",
+  "repo": "http://github.com/michaelgreenhill/michaelgreenhill.github.io",
+  "comments": false,
+  "og_locale": "en_AU",
+  "hero_image": "https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/IMG_0067.jpg"
+}

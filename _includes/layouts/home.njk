@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title>{{ title }}</title>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+
+    <meta name="description" content="{{ site.subtitle }}"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="canonical" href="{{ site.url }}"/>
+    <meta name="referrer" content="no-referrer-when-downgrade"/>
+
+    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ site.title }}"/>
+    <meta property="og:description" content="{{ site.subtitle }}"/>
+    <meta property="og:url" content="{{ site.url }}"/>
+    <meta property="og:image" content="{{ site.hero_image }}"/>
+    <meta property="article:publisher" content="{{ site.social.facebook }}"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="{{ site.title }}"/>
+    <meta name="twitter:description" content="{{ site.subtitle }}"/>
+    <meta name="twitter:url" content="{{ site.url }}"/>
+    <meta name="twitter:image" content="{{ site.hero_image }}"/>
+    <meta property="og:image:width" content="1620"/>
+    <meta property="og:image:height" content="1080"/>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "publisher": {
+          "@type": "Organization",
+          "name": "{{ site.title }}",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}/favicon.ico",
+            "width": 48,
+            "height": 48
+          }
+        },
+        "url": "{{ site.url }}",
+        "image": {
+          "@type": "ImageObject",
+          "url": "{{ site.hero_image }}",
+          "width": 1620,
+          "height": 1080
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "{{ site.url }}"
+        },
+        "description": "{{ site.subtitle }}"
+      }
+    </script>
+
+    <meta name="generator" content="11ty"/>
+    <link rel="alternate" type="application/rss+xml" title="{{ author.name }}" href="{{ site.url }}/rss/"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-97297631-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-97297631-1');
+    </script>
+
+  </head>
+  <body class="home-template">
+
+    <div class="site-wrapper">
+      <header class="site-home-header">
+
+        <style type="text/css">
+          .responsive-header-img {
+            background-image: url("{{ site.hero_image }}");
+          }
+
+          @media(max-width: 1000px) {
+            .responsive-header-img {
+              background-image: url("{{ site.hero_image }}");
+              background-image: -webkit-image-set(url({{ site.hero_image }}) 1x, url({{ site.hero_image }}) 2x);
+              background-image: image-set(url({{ site.hero_image }}) 1x, url({{ site.hero_image }}) 2x);
+            }
+          }
+
+          @media(max-width: 600px) {
+            .responsive-header-img {
+              background-image: url("{{ site.hero_image }}");
+              background-image: -webkit-image-set(url({{ site.hero_image }}) 1x, url({{ site.hero_image }}) 2x);
+              background-image: image-set(url({{ site.hero_image }}) 1x, url({{ site.hero_image }}) 2x);
+            }
+          }
+        </style>
+        <div class="outer site-header-background responsive-header-img">
+
+          <div class="inner">
+            <nav class="site-nav">
+              <div class="site-nav-left-wrapper">
+                <div class="site-nav-left">
+                  <a class="site-nav-logo" href="{{ site.url }}">{{ site.title }}</a>
+                  <div class="site-nav-content">
+                    <ul class="nav" role="menu">
+                      <li class="nav-home nav-current" role="menuitem">
+                        <a href="{{ site.url }}">Home</a>
+                      </li>
+                      <li class="nav-facebook" role="menuitem">
+                        <a href="{{ site.social.facebook }}/">Facebook</a>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+              <div class="site-nav-right">
+                <div class="social-links">
+                  <a class="social-link social-link-fb" href="{{ site.social.facebook }}" title="Facebook" target="_blank" rel="noopener">
+                    <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </nav>
+            <div class="site-header-content">
+              <h1 class="site-title">
+                {{ site.title }}
+              </h1>
+              <h2 class="site-description">{{ site.subtitle }}</h2>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="site-main" class="site-main outer">
+        <div class="inner posts">
+          <div class="post-feed">
+
+            {%- for post in collections.post | reverse -%}
+              <article class="post-card">
+                <a class="post-card-image-link" href="{{ post.url }}">
+                  <img class="post-card-image" src="{{ post.data.heroimage }}">
+                </a>
+                <div class="post-card-content">
+                  <a class="post-card-content-link" href="{{ post.url }}">
+                    <h2 class="post-card-title">{{ post.data.title }}</h2>
+                    <section class="post-card-excerpt">
+                      <p>{{ post.data.subtitle }}</p>
+                    </section>
+                  </a>
+                  <footer class="post-card-meta">
+                    <div class="post-card-byline-content">
+                      <span class="post-card-byline-date">
+                        <time datetime="{{ post.data.date }}">{{ post.data.date | niceDate }}</time>
+                      </span>
+                    </div>
+                  </footer>
+                </div>
+              </article>
+            {%- endfor -%}
+          </div>
+        </div>
+
+      </main>
+
+      <aside class="read-next outer"></aside>
+
+      <footer class="site-footer outer"></footer>
+
+    </div>
+  </body>
+</html>
