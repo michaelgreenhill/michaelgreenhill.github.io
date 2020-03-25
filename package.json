@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "start": "npx @11ty/eleventy --serve",
     "build": "echo '💯  build\n'; npx @11ty/eleventy",
-    "deploy": "aws s3 cp --recursive --acl public-read --region ap-southeast-2 ./_site/ s3://michaelgreenhill-net && aws s3 cp --recursive --acl public-read --region ap-southeast-2 ./css/ s3://michaelgreenhill-net/css/",
+    "deploy": "aws s3 cp --recursive --acl public-read --region ap-southeast-2 ./docs/ s3://michaelgreenhill-net && aws s3 cp --recursive --acl public-read --region ap-southeast-2 ./css/ s3://michaelgreenhill-net/css/",
     "up": "npm run build && npm run deploy"
   },
   "repository": {
