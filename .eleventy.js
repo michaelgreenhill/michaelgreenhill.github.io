@@ -33,6 +33,18 @@ module.exports = function (eleventyConfig) {
     return moment(date).format("DD MMM YYYY");
   });
 
+  eleventyConfig.addPassthroughCopy('css', function () {
+    return {
+      passthroughFileCopy: true
+    }
+  });
+
+  eleventyConfig.addPassthroughCopy('images', function () {
+    return {
+      passthroughFileCopy: true
+    }
+  });
+
   return {
     dir: {
       input: "./", // Equivalent to Jekyll's source property
