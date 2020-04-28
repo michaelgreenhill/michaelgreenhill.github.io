@@ -90,3 +90,6 @@ Frustratingly, I still need to maintain a PPPoE connection on the Asus router fo
 Because I didn’t want to.
 
 I know pfSense like the back of my hand and I knew I could spin up a secure multi-WAN router with load balancing, IDS/IPS, and policy-based routing (spoiler alert for part 2) within a day. Some of that functionality just doesn’t exist on the EdgeRouter X.
+
+## But wait, tell me more!
+Check out [Part 2](/making-my-homelab-smarter-part-2/) for more salacious details.
