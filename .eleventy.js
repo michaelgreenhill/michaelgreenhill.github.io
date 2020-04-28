@@ -27,6 +27,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+  eleventyConfig.addLayoutAlias('tags', 'layouts/tags.njk');
   eleventyConfig.addLayoutAlias('default', 'layouts/post.njk');
 
   eleventyConfig.addFilter("niceDate", function (date) {

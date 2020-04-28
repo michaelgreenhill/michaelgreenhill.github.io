@@ -1,3 +1,10 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -144,17 +151,44 @@
           <article class="post-full post">
             <section class="post-full-content">
               <div class="post-content">
-                {{ content | safe }}
+                <h1 style="margin-left: 4rem">Tagged "{{ tag }}"</h1>
               </div>
             </section>
-          </article>
-        </div>
-      </main>
+            <div class="post-feed">
 
-      <aside class="read-next outer"></aside>
+              {%- for post in collections[ tag ] -%}
+                <article class="post-card">
+                  <a class="post-card-image-link" href="{{ post.url }}">
+                    <img class="post-card-image" src="{{ post.data.heroimage }}">
+                  </a>
+                  <div class="post-card-content">
+                    <a class="post-card-content-link" href="{{ post.url }}">
+                      <h2 class="post-card-title">{{ post.data.title }}</h2>
+                      <section class="post-card-excerpt">
+                        <p>{{ post.data.subtitle }}</p>
+                      </section>
+                    </a>
+                    <footer class="post-card-meta">
+                      <div class="post-card-byline-content">
+                        <span class="post-card-byline-date">
+                          <time datetime="{{ post.data.date }}">{{ post.data.date | niceDate }}</time>
+                        </span>
+                      </div>
+                    </footer>
+                  </div>
+                </article>
+              {%- endfor -%}
+            </div>
+          </div>
+        </article>
+      </div>
 
-      <footer class="site-footer outer"></footer>
+    </main>
 
-    </div>
-  </body>
+    <aside class="read-next outer"></aside>
+
+    <footer class="site-footer outer"></footer>
+
+  </div>
+</body>
 </html>
