@@ -10,8 +10,6 @@ tags:
 date: 2020-01-07
 ---
 
-![{{subtitle}}]({{ heroimage }})
-
 Back in [Part 1](/making-my-homelab-smarter-part-1/) I waffled on about the sad state of my internet and what I intended to do about it.
 
 ## Why should I care about pfSense?

@@ -9,8 +9,6 @@ tags:
 date: 2020-02-16
 ---
 
-![{{subtitle}}]({{ heroimage }})
-
 *This is a rehash of my presentation at the Railway Photography Forum at the Powerhouse Museum, back in 2018.*
 
 ---

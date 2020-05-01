@@ -11,8 +11,6 @@ tags:
 date: 2020-04-05
 ---
 
-![{{ subtitle }}]({{ heroimage }})
-
 In one of my [previous posts](/using-aws-secrets-manager-for-.env-files/) I demonstrated the use of AWS Secrets Manager for securely keeping and maintaining the state of a Laravel application .env file. 
 
 Storing it is one thing - but how do you inform the Laravel application of the updated .env file when the secret changes? SSH-ing into each ephemeral EC2 instance is a nightmare: there *has* to be a better way.

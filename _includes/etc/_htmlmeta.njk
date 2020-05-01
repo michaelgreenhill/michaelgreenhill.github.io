@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer-when-downgrade"/>
 <meta name="description" content="{{ site.subtitle }}"/>
 
-<title>{{title}}</title>
+<title>{{ renderData.title or title or metadata.title }}</title>
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css"/>
 <link rel="stylesheet" type="text/css" href="/css/custom.css"/>

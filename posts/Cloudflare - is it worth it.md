@@ -11,8 +11,6 @@ tags:
 date: 2020-02-19
 ---
 
-![{{ subtitle }}]({{ heroimage }})
-
 So this website is still in its infancy. Less than a week old, in fact.
 
 During my setup process (which I'll detail in a forthcoming article...) I made the decision wrap my site in the warm embrace of Cloudflare - a magical service full of the hopes, dreams, and promises of a secured and snappier website.

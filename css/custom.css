@@ -106,3 +106,71 @@ ol.taglist li {
 }
 
 li.nav-current a:before{right:12px;opacity:.5}
+
+.postlist { margin: 0; padding:0 }
+.postlist li { 
+    list-style: none; 
+    margin: 0 0 3rem 0;
+    padding: 0; 
+}
+
+.postlist li a {
+    border: 0;
+    text-decoration: none;
+    box-shadow: none; 
+    display: grid; 
+    grid-gap: 1rem; 
+    grid-template-columns: auto 150px;
+}
+
+.postlist li a strong {
+    display: block; 
+    grid-column: 1;
+    grid-row: 1; 
+}
+
+.postlist li a span {
+    display: block; 
+    grid-column: 1;
+    grid-row: 2; 
+    font-size: 1.8rem; 
+}
+
+.postlist li a time {
+    grid-column: 2;
+    grid-row: 1; 
+    font-size: 1.6rem; 
+    text-align: right;
+}
+
+aside.post-aside {
+    float: right;
+    background: whitesmoke;
+    padding: 1rem 1.6rem; 
+    margin: 0 0 2rem 2rem; 
+    width: 300px; 
+    display: block; 
+    font-size: 1.6rem; 
+    margin-right: -150px; 
+}
+
+div.heroimage {
+    margin: 0; 
+    background: #333; 
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+p.subtitle {
+    font-size: 3rem; 
+    margin-top: 5rem;
+}
+
+span.reading-time {
+    font-size: 1.6rem; 
+    font-style: italic; 
+}

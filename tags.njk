@@ -1,0 +1,22 @@
+---
+layout: layouts/single.njk
+permalink: /tags/{{ tag }}/
+renderData:
+  title: "Tagged {{ tag }}"
+title: "Tagged {{ tag }}"
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+    - home
+  addAllPagesToCollections: true
+---
+
+{% set postslist = collections[ tag ] %}
+{% include "postlist.njk" %}

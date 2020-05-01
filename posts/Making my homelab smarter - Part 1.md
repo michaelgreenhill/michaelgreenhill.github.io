@@ -10,8 +10,6 @@ tags:
 date: 2020-01-07
 ---
 
-![{{subtitle}}]({{ heroimage }})
-
 It's always the way, isn't it? The builder's house is need of repairs, the chef's cupboard is always empty, and the IT professional's home lab is trash.
 
 Ah ok, maybe just my lab then…

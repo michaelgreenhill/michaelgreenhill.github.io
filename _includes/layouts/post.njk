@@ -94,13 +94,24 @@
           <article class="post-full post">
             <section class="post-full-content">
               <div class="post-header">
-                <h1>{{ title }}</h1>
-                <p>{{ subtitle }}</p>
+                <h1>{{ renderData.title or title or metadata.title }}</h1>
 
                 {% set tagslist = tags %}
                 {% include "etc/_tags.njk" %}
+                <span class="reading-time">About {{ content | readingTime }} reading time</span>
+
               </div>
+
+              {% if heroimage %}
+              <div class="heroimage"><img src="{{ heroimage }}"></div>
+              {% endif %}
+
+              <aside class="post-aside">
+                <strong>Contents</strong>
+                {{ content | toc | safe }}
+              </aside>
               <div class="post-content">
+                <p class="subtitle">{{ subtitle }}</p>
                 {{ content | safe }}
               </div>
             </section>

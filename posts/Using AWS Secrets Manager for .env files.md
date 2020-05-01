@@ -10,12 +10,6 @@ tags:
 date: 2020-02-17
 ---
 
-# {{ title }}
-
-{{ subtitle }}
-
-![{{subtitle}}]({{ heroimage }})
-
 Managing environment files for highly-available cloud apps can be tricky. The easiest option, of course, is to embed these environment files into your code repo, but of course, that then commits secrets (passwords, API keys, etc) into the repo for all to see.
 
 Yeah, not such a great idea, then.

@@ -93,6 +93,17 @@
         <div class="inner">
           <article class="post-full post">
             <section class="post-full-content">
+              <div class="post-header">
+                <h1>{{ renderData.title or title or metadata.title }}</h1>
+                {% if subtitle %}
+                <p>{{ subtitle }}</p>
+                {% endif %}
+
+                {% if tags %}
+                {% set tagslist = tags %}
+                {% include "etc/_tags.njk" %}
+                {% endif %}
+              </div>
               <div class="post-content">
                 {{ content | safe }}
               </div>
