@@ -18,8 +18,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginTOC)
 
   
-  //const cacheBusterOptions = {};
-  //eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
+  const cacheBusterOptions = {
+    "outputDirectory": "./docs"
+  };
+  eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
   eleventyConfig.addLayoutAlias('default', 'layouts/post.njk');
@@ -38,6 +40,8 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
+
+  eleventyConfig.addPassthroughCopy('favicon.ico');
 
   eleventyConfig.addPassthroughCopy('css', function () {
     return {
