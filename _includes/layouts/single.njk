@@ -93,13 +93,6 @@
         <div class="inner">
           <article class="post-full post">
             <section class="post-full-content">
-              <div class="post-header">
-                <h1>{{ title }}</h1>
-                <p>{{ subtitle }}</p>
-
-                {% set tagslist = tags %}
-                {% include "etc/_tags.njk" %}
-              </div>
               <div class="post-content">
                 {{ content | safe }}
               </div>

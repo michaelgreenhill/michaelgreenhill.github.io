@@ -1,30 +1,16 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const moment = require("moment");
+const { DateTime } = require("luxon");
+const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
-  /*
-  var md = require('markdown-it')();
-  var markdownItAttrs = require('markdown-it-attrs');
-  var implicitFigures = require('markdown-it-implicit-figures');
-
-  md.use(markdownItAttrs, {
-    // optional, these are default options
-    leftDelimiter: '{',
-    rightDelimiter: '}',
-    allowedAttributes: [] // empty array = all attributes are allowed
-  });
-
-  md.use(implicitFigures, {
-    dataType: false, // <figure data-type="image">, default: false
-    figcaption: false, // <figcaption>alternative text</figcaption>, default: false
-    tabindex: false, // <figure tabindex="1+n">..., default: false
-    link: false // <a href="img.png"><img src="img.png"></a>, default: false
-  });
-
-  eleventyConfig.setLibrary('md', md);
-  */
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(pluginRss);
+  
+  //const cacheBusterOptions = {};
+  //eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
   eleventyConfig.addLayoutAlias('tags', 'layouts/tags.njk');
@@ -33,6 +19,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("niceDate", function (date) {
     return moment(date).format("DD MMM YYYY");
   });
+
+  eleventyConfig.addFilter("readableDate", function (date) {
+    return moment(date).format("DD MMM YYYY");
+  });
+
+  eleventyConfig.addFilter('htmlDateString', dateObj => {
+    return DateTime.fromJSDate(dateObj).toFormat('MMMM d, yyyy')
+  })
 
   eleventyConfig.addPassthroughCopy('css', function () {
     return {
@@ -48,8 +42,8 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: "./", // Equivalent to Jekyll's source property
-      output: "./docs" // Equivalent to Jekyll's destination property
+      input: "./",
+      output: "./docs"
     }
   };
 };

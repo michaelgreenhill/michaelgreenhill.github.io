@@ -11,10 +11,6 @@ tags:
 date: 2020-02-19
 ---
 
-# {{ title }}
-
-{{ subtitle }}
-
 ![{{ subtitle }}]({{ heroimage }})
 
 So this website is still in its infancy. Less than a week old, in fact.

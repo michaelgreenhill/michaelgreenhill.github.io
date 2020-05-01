@@ -91,3 +91,18 @@ figure.fullwidth img {
     height: auto; 
     border: 0;
 }
+
+ol.taglist {
+    margin: 0; padding: 0; 
+}
+
+ol.taglist li {
+    list-style: none;
+    display: inline-block; 
+    text-transform: uppercase; 
+    margin: 0 0.5rem 0 0;
+    padding: 0; 
+    font-size: 1.4rem;
+}
+
+li.nav-current a:before{right:12px;opacity:.5}

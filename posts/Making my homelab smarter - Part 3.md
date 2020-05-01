@@ -11,10 +11,6 @@ tags:
 date: 2020-01-08
 ---
 
-# {{ title }}
-
-{{ subtitle }}
-
 ![{{subtitle}}]({{ heroimage }})
 
 Let’s recap. Back in [Part 1](/making-my-homelab-smarter-part-1), I had a proper grumble about ADSL and routers. In [Part 2](/making-my-homelab-smarter-part-2) we enjoyed a good chat about multi-WAN (load balancing, failover) and policy-based routing.

@@ -1,12 +1,13 @@
 ---
-layout: layouts/home.njk
-permalink: /posts/
+layout: layouts/single.njk
+permalink: /archives/
+title: Archives
 eleventyNavigation:
-  key: Archive
+  key: Archives
   order: 2
 ---
 
 <h1>Archive</h1>
 
-{% set postslist = collections.posts %}
+{% set postslist = collections.post %}
 {% include "postlist.njk" %}

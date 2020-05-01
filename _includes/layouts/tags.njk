@@ -3,24 +3,13 @@ pagination:
   data: collections
   size: 1
   alias: tag
-permalink: /tags/{{ tag }}/
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    {% include 'etc/_htmlmeta.njk' %}
 
-    <title>{{title}}</title>
-    <meta name="HandheldFriendly" content="True"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <link rel="stylesheet" type="text/css" href="/css/screen.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
-
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <link rel="canonical" href="{{ site.url }}/{{ title | slug }}/"/>
-    <meta name="referrer" content="no-referrer-when-downgrade"/>
+    <link rel="canonical" href="{{ site.url }}/{{ permalink }}/"/>
 
     <meta property="og:site_name" content="{{ site.title }}"/>
     <meta property="og:type" content="article"/>
@@ -92,20 +81,6 @@ permalink: /tags/{{ tag }}/
       }
     </script>
 
-    <meta name="generator" content="11ty"/>
-    <link rel="alternate" type="application/rss+xml" title="{{ author.name }}" href="{{ site.url }}/rss/"/>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-97297631-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', 'UA-97297631-1');
-    </script>
-
   </head>
   <body class="post-template">
 
@@ -114,34 +89,7 @@ permalink: /tags/{{ tag }}/
       <header class="site-header">
         <div class="outer site-nav-main">
           <div class="inner">
-            <nav class="site-nav">
-              <div class="site-nav-left-wrapper">
-                <div class="site-nav-left">
-                  <a class="site-nav-logo" href="{{ site.url }}">Michael Greenhill</a>
-                  <div class="site-nav-content">
-                    <ul class="nav" role="menu">
-                      <li class="nav-home" role="menuitem">
-                        <a href="{{ site.url }}/">Home</a>
-                      </li>
-                      <li class="nav-facebook" role="menuitem">
-                        <a href="{{ site.social.facebook }}/">Facebook</a>
-                      </li>
-                    </ul>
-
-                    <span class="nav-post-title dash">{{ title }}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="site-nav-right">
-                <div class="social-links">
-                  <a class="social-link social-link-fb" href="{{ site.social.facebook }}" title="Facebook" target="_blank" rel="noopener">
-                    <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </nav>
+            {% include 'etc/_menu.njk' %}
           </div>
         </div>
       </header>
@@ -187,7 +135,7 @@ permalink: /tags/{{ tag }}/
 
     <aside class="read-next outer"></aside>
 
-    <footer class="site-footer outer"></footer>
+    {% include 'etc/_footer.njk' %}
 
   </div>
 </body>

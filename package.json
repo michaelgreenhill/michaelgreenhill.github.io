@@ -23,7 +23,12 @@
   "homepage": "https://github.com/michaelgreenhill/michaelgreenhill.github.ioo#readme",
   "dependencies": {
     "@11ty/eleventy-navigation": "^0.1.5",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "del": "^5.1.0",
+    "luxon": "^1.23.0",
     "moment": "^2.24.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@mightyplow/eleventy-plugin-cache-buster": "^1.1.3"
+  }
 }

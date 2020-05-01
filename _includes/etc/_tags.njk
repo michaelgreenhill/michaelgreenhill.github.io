@@ -1,0 +1,9 @@
+<ol reversed class="taglist" style="counter-reset: start-from {{ (tagslistCounter or tagslist.length) + 1 }}">
+{% for tag in tagslist %}
+{% if tag != "post" %}
+  <li>
+    <a href="/tags/{{ tag }}" class="taglist-link">{{ tag }}</a>
+  </li>
+{% endif %}
+{% endfor %}
+</ol>

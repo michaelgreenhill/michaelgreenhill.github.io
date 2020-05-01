@@ -11,10 +11,6 @@ tags:
 date: 2020-04-05
 ---
 
-# {{ title }}
-
-{{ subtitle }}
-
 ![{{ subtitle }}]({{ heroimage }})
 
 In one of my [previous posts](/using-aws-secrets-manager-for-.env-files/) I demonstrated the use of AWS Secrets Manager for securely keeping and maintaining the state of a Laravel application .env file. 

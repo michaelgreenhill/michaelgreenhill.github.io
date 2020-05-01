@@ -12,10 +12,6 @@ date: 2020-02-22
 author: {{ userList.michael }}
 ---
 
-# {{ title }}
-
-{{ subtitle }}
-
 ![{{subtitle}}]({{ heroimage }})
 
 One of our brands recently suffered a DDoS attack - thankfully not a sustained one, but enough to impact website availability and rethink our defensive strategies.
