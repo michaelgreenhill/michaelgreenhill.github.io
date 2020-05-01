@@ -31,7 +31,8 @@
     "luxon": "^1.23.0",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.7",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "parse-json": "^5.0.0"
   },
   "devDependencies": {
     "@mightyplow/eleventy-plugin-cache-buster": "^1.1.3"
