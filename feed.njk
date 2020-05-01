@@ -15,8 +15,9 @@
   <title>{{ site.title }}</title>
   <subtitle>{{ site.subtitle }}</subtitle>
   <link href="{{ site.url }}/feed.xml" rel="self"/>
-  <link href="{{ site.url }}"/>
-  <id>{{ site.url }}</id>
+  <link href="{{ site.url }}/"/>
+  <id>{{ site.url }}/</id>
+  <updated>{{ collections.post | rssLastUpdatedDate }}</updated>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
