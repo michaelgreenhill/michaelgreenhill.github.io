@@ -1,4 +1,5 @@
 _site/*
+docs/*
 deploy/*
 node_modules
 node_modules/*
