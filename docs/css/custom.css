@@ -1,0 +1,176 @@
+.site-header-background:before {
+    background-color: black;
+    opacity: 0.8;
+}
+
+.post-card-primary-tag {
+    background-color: #a3e3f7;
+    color: black;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    width: auto;
+    border-radius: 3px;
+    display: inline-block; 
+}
+
+.gist {
+    width: 100%;
+}
+
+.post-full-header {
+    padding: 70px 70px 50px;
+}
+
+.post-full-content {
+    padding: 0 70px 6vw
+}
+
+.post-full-tags {
+    margin-top: 1rem;
+    margin-bottom: -2rem;
+}
+
+@media (max-width: 500px) {
+    .post-full-content {
+        padding: 0px;
+    }
+    
+    .post-full-header {
+        padding: 20px 0 35px;
+    }
+}
+
+.post-card-byline-content {
+    margin: 0;
+}
+
+div.post-feed {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+article.post-card:first-child {
+    width: 100%; 
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+article.post-card:first-child a.post-card-image-link {
+    flex: 1 1 auto;
+    min-height: 380px;
+}
+
+article.post-card:first-child div.post-card-content {
+    flex: 0 1 361px;
+    justify-content: center;
+    padding-left: 40px; 
+    min-width: 380px;
+}
+
+article.post-card:first-child .post-card-image {
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+}
+
+article.post-card:not(:first-child) div.post-card-content {
+    padding-top: 40px; 
+}
+
+article.post-card:not(:first-child) .post-card-image {
+    height: 200px; 
+    width: 100%; 
+    object-fit: cover
+}
+
+figure.fullwidth img {
+    max-width: 100vw;
+    margin: 0;
+    display: block;
+    height: auto; 
+    border: 0;
+}
+
+ol.taglist {
+    margin: 0; padding: 0; 
+}
+
+ol.taglist li {
+    list-style: none;
+    display: inline-block; 
+    text-transform: uppercase; 
+    margin: 0 0.5rem 0 0;
+    padding: 0; 
+    font-size: 1.4rem;
+}
+
+li.nav-current a:before{right:12px;opacity:.5}
+
+.postlist { margin: 0; padding:0 }
+.postlist li { 
+    list-style: none; 
+    margin: 0 0 3rem 0;
+    padding: 0; 
+}
+
+.postlist li a {
+    border: 0;
+    text-decoration: none;
+    box-shadow: none; 
+    display: grid; 
+    grid-gap: 1rem; 
+    grid-template-columns: auto 150px;
+}
+
+.postlist li a strong {
+    display: block; 
+    grid-column: 1;
+    grid-row: 1; 
+}
+
+.postlist li a span {
+    display: block; 
+    grid-column: 1;
+    grid-row: 2; 
+    font-size: 1.8rem; 
+}
+
+.postlist li a time {
+    grid-column: 2;
+    grid-row: 1; 
+    font-size: 1.6rem; 
+    text-align: right;
+}
+
+aside.post-aside {
+    float: right;
+    background: whitesmoke;
+    padding: 1rem 1.6rem; 
+    margin: 0 0 2rem 2rem; 
+    width: 300px; 
+    display: block; 
+    font-size: 1.6rem; 
+    margin-right: -150px; 
+}
+
+div.heroimage {
+    margin: 0; 
+    background: #333; 
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+p.subtitle {
+    font-size: 3rem; 
+    margin-top: 5rem;
+}
+
+span.reading-time {
+    font-size: 1.6rem; 
+    font-style: italic; 
+}

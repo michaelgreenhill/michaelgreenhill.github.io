@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="generator" content="11ty"/>
+<meta name="referrer" content="no-referrer-when-downgrade"/>
+<meta name="description" content="IT and Photography"/>
+
+<title>Using AWS Secrets Manager for .env files</title>
+
+<link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=7a88a16b41070bc778b11cf209426543">
+<link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
+
+<link rel="alternate" type="application/atom+xml" title="" href="/feed.xml?v=6665236f9459354cefc0f8a0ec2552ca">
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-97297631-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-97297631-1');
+    </script>
+
+    <link rel="canonical" href="https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/"/>
+
+    <meta property="og:site_name" content="Michael Greenhill"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Using AWS Secrets Manager for .env files"/>
+    <meta property="og:description" content="Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!"/>
+    <meta property="og:url" content="https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/"/>
+    <meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg"/>
+    <meta property="article:published_time" content="2020-02-22T04:58:36.000Z"/>
+    <meta property="article:modified_time" content="2020-02-22T04:58:36.000Z"/>
+    <meta property="article:tag" content="it"/>
+    <meta property="article:tag" content="ddos"/>
+    <meta property="article:tag" content="nginx"/>
+
+    <meta property="article:publisher" content="https://facebook.com/aspect19"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Using AWS Secrets Manager for .env files"/>
+    <meta name="twitter:description" content="Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!"/>
+    <meta name="twitter:url" content="https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/"/>
+    <meta name="twitter:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg"/>
+    <meta name="twitter:label1" content="Written by"/>
+    <meta name="twitter:data1" content=""/>
+    <meta name="twitter:label2" content="Filed under"/>
+    <meta name="twitter:data2" content="it, ddos, nginx"/>
+    <meta property="og:image:width" content="1280"/>
+    <meta property="og:image:height" content="919"/>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "publisher": {
+          "@type": "Organization",
+          "name": "",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://michaelgreenhill.net/favicon.ico",
+            "width": 48,
+            "height": 48
+          }
+        },
+        "author": {
+          "@type": "Person",
+          "name": "",
+          "image": {
+            "@type": "ImageObject",
+            "url": "",
+            "width": 500,
+            "height": 500
+          },
+          "url": "https://michaelgreenhill.net/author/michael/",
+          "sameAs": []
+        },
+        "headline": "Using AWS Secrets Manager for .env files",
+        "url": "https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/",
+        "datePublished": "2020-02-22T04:58:36.000Z",
+        "dateModified": "2020-02-22T04:58:36.000Z",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg",
+          "width": 1280,
+          "height": 919
+        },
+        "keywords": "it, ddos, nginx",
+        "description": "Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://michaelgreenhill.net/"
+        }
+      }
+    </script>
+
+  </head>
+  <body class="post-template">
+
+    <div class="site-wrapper">
+
+      <header class="site-header">
+        <div class="outer site-nav-main">
+          <div class="inner">
+            
+
+<nav class="site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+            <a class="site-nav-logo" href="/">Michael Greenhill</a>
+            <div class="site-nav-content">
+                <ul class="nav" role="menu">
+                    <li class="nav-home " role="menuitem">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="nav-home " role="menuitem">
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    <li class="nav-home " role="menuitem">
+                        <a href="/archives/">Archives</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            <a class="social-link social-link-fb" href="https://facebook.com/aspect19" title="Facebook" target="_blank" rel="noopener">
+                <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</nav>
+          </div>
+        </div>
+      </header>
+
+      <main id="site-main" class="site-main outer">
+        <div class="inner">
+          <article class="post-full post">
+            <section class="post-full-content">
+              <div class="post-header">
+                <h1>Using AWS Secrets Manager for .env files</h1>
+
+                
+                <ol reversed class="taglist" style="counter-reset: start-from 4">
+
+
+
+
+  <li>
+    <a href="/tags/aws" class="taglist-link">aws</a>
+  </li>
+
+
+
+  <li>
+    <a href="/tags/it" class="taglist-link">it</a>
+  </li>
+
+
+</ol>
+                <span class="reading-time">About 1 min reading time</span>
+
+              </div>
+
+              
+              <div class="heroimage"><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg"></div>
+              
+
+              <aside class="post-aside">
+                <strong>Contents</strong>
+                <nav class="toc"><ol><li><a href="#what-exactly-is-a-secret%3F">What exactly is a secret?</a></li><li><a href="#accessing-the-secrets-from-ec2">Accessing the secrets from EC2</a></li></ol></nav>
+              </aside>
+              <div class="post-content">
+                <p class="subtitle">Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!</p>
+                <p>Managing environment files for highly-available cloud apps can be tricky. The easiest option, of course, is to embed these environment files into your code repo, but of course, that then commits secrets (passwords, API keys, etc) into the repo for all to see.</p>
+<p>Yeah, not such a great idea, then.</p>
+<p>One option is to use AWS Secrets Manager. This tool securely stores your secrets (for the princely sum of $0.40 per secret per month) - well, as securely as your IAM policies dictate.</p>
+<h2 id="what-exactly-is-a-secret%3F">What exactly is a secret? <a class="anchor-link" href="#what-exactly-is-a-secret%3F">#</a></h2>
+<p>In terms of pricing, the AWS pricing model lists $0.40 per secret per month. A secret can contain multiple key=value pairs, up to a total size of 10kb per secret.</p>
+<p>With that in mind, it’s trivial to create a key=value stack in Secrets Manager.</p>
+<p><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/image-7.png" alt="Example AWS Secret"></p>
+<h2 id="accessing-the-secrets-from-ec2">Accessing the secrets from EC2 <a class="anchor-link" href="#accessing-the-secrets-from-ec2">#</a></h2>
+<p>Assuming you’ve been following the AWS best practices and have assigned a role to your EC2 instances, it’s just a matter of creating an IAM policy that grants access to the secret, and attaching it to your EC2 role.</p>
+<pre><code>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;secretsmanager:GetResourcePolicy&quot;,
+                &quot;secretsmanager:GetSecretValue&quot;,
+                &quot;secretsmanager:DescribeSecret&quot;,
+                &quot;secretsmanager:ListSecretVersionIds&quot;
+            ],
+            &quot;Resource&quot;: &quot;&lt;ARN of your fancy new secret&gt;&quot;
+        }
+    ]
+}
+</code></pre>
+<p>This policy grants read-only access to your secret (because your EC2 instance should not be able to manipulate the secret!)</p>
+<p>The final step is to extract the secret and dump it to a .env file in KEY=“value” format.</p>
+<pre><code>#!/bin/bash
+
+AWS_SECRET_ID=&quot;my-super-secret-secret&quot;
+AWS_REGION=&quot;ap-southeast-2&quot;
+ENVFILE=&quot;/srv/app/.env&quot;
+
+# Ensure your EC2 instance has the most recent version of the AWS CLI
+apt-get install -y python3-pip jq
+pip3 install awscli --upgrade
+
+# Export the secret to .env
+aws secretsmanager get-secret-value --secret-id $AWS_SECRET_ID --region $AWS_REGION | \
+  jq -r '.SecretString' | \
+  jq -r &quot;to_entries|map(\&quot;\(.key)=\\\&quot;\(.value|tostring)\\\&quot;\&quot;)|.[]&quot; &gt; $ENVFILE
+</code></pre>
+<p>And that’s pretty much it!</p>
+
+              </div>
+            </section>
+          </article>
+        </div>
+      </main>
+
+      <aside class="read-next outer"></aside>
+
+      
+
+    <footer class="site-footer outer"></footer>
+
+    </div>
+  </body>
+</html>

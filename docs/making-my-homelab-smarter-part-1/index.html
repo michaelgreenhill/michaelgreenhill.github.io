@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="generator" content="11ty"/>
+<meta name="referrer" content="no-referrer-when-downgrade"/>
+<meta name="description" content="IT and Photography"/>
+
+<title>Making my homelab smarter - Part 1</title>
+
+<link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=7a88a16b41070bc778b11cf209426543">
+<link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
+
+<link rel="alternate" type="application/atom+xml" title="" href="/feed.xml?v=6665236f9459354cefc0f8a0ec2552ca">
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-97297631-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-97297631-1');
+    </script>
+
+    <link rel="canonical" href="https://michaelgreenhill.net/making-my-homelab-smarter-part-1/"/>
+
+    <meta property="og:site_name" content="Michael Greenhill"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Making my homelab smarter - Part 1"/>
+    <meta property="og:description" content="Or, how I NUC&#39;d everything up."/>
+    <meta property="og:url" content="https://michaelgreenhill.net/making-my-homelab-smarter-part-1/"/>
+    <meta property="og:image" content="/images/1_omi0RFCCZNWaUQGTgcnjCA.png"/>
+    <meta property="article:published_time" content="2020-02-22T04:58:36.000Z"/>
+    <meta property="article:modified_time" content="2020-02-22T04:58:36.000Z"/>
+    <meta property="article:tag" content="it"/>
+    <meta property="article:tag" content="ddos"/>
+    <meta property="article:tag" content="nginx"/>
+
+    <meta property="article:publisher" content="https://facebook.com/aspect19"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Making my homelab smarter - Part 1"/>
+    <meta name="twitter:description" content="Or, how I NUC&#39;d everything up."/>
+    <meta name="twitter:url" content="https://michaelgreenhill.net/making-my-homelab-smarter-part-1/"/>
+    <meta name="twitter:image" content="/images/1_omi0RFCCZNWaUQGTgcnjCA.png"/>
+    <meta name="twitter:label1" content="Written by"/>
+    <meta name="twitter:data1" content=""/>
+    <meta name="twitter:label2" content="Filed under"/>
+    <meta name="twitter:data2" content="it, ddos, nginx"/>
+    <meta property="og:image:width" content="1280"/>
+    <meta property="og:image:height" content="919"/>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "publisher": {
+          "@type": "Organization",
+          "name": "",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://michaelgreenhill.net/favicon.ico",
+            "width": 48,
+            "height": 48
+          }
+        },
+        "author": {
+          "@type": "Person",
+          "name": "",
+          "image": {
+            "@type": "ImageObject",
+            "url": "",
+            "width": 500,
+            "height": 500
+          },
+          "url": "https://michaelgreenhill.net/author/michael/",
+          "sameAs": []
+        },
+        "headline": "Making my homelab smarter - Part 1",
+        "url": "https://michaelgreenhill.net/making-my-homelab-smarter-part-1/",
+        "datePublished": "2020-02-22T04:58:36.000Z",
+        "dateModified": "2020-02-22T04:58:36.000Z",
+        "image": {
+          "@type": "ImageObject",
+          "url": "/images/1_omi0RFCCZNWaUQGTgcnjCA.png",
+          "width": 1280,
+          "height": 919
+        },
+        "keywords": "it, ddos, nginx",
+        "description": "Or, how I NUC&#39;d everything up.",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://michaelgreenhill.net/"
+        }
+      }
+    </script>
+
+  </head>
+  <body class="post-template">
+
+    <div class="site-wrapper">
+
+      <header class="site-header">
+        <div class="outer site-nav-main">
+          <div class="inner">
+            
+
+<nav class="site-nav">
+    <div class="site-nav-left-wrapper">
+        <div class="site-nav-left">
+            <a class="site-nav-logo" href="/">Michael Greenhill</a>
+            <div class="site-nav-content">
+                <ul class="nav" role="menu">
+                    <li class="nav-home " role="menuitem">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="nav-home " role="menuitem">
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    <li class="nav-home " role="menuitem">
+                        <a href="/archives/">Archives</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            <a class="social-link social-link-fb" href="https://facebook.com/aspect19" title="Facebook" target="_blank" rel="noopener">
+                <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</nav>
+          </div>
+        </div>
+      </header>
+
+      <main id="site-main" class="site-main outer">
+        <div class="inner">
+          <article class="post-full post">
+            <section class="post-full-content">
+              <div class="post-header">
+                <h1>Making my homelab smarter - Part 1</h1>
+
+                
+                <ol reversed class="taglist" style="counter-reset: start-from 4">
+
+
+
+
+  <li>
+    <a href="/tags/homelab" class="taglist-link">homelab</a>
+  </li>
+
+
+
+  <li>
+    <a href="/tags/it" class="taglist-link">it</a>
+  </li>
+
+
+</ol>
+                <span class="reading-time">About 3 min reading time</span>
+
+              </div>
+
+              
+              <div class="heroimage"><img src="/images/1_omi0RFCCZNWaUQGTgcnjCA.png"></div>
+              
+
+              <aside class="post-aside">
+                <strong>Contents</strong>
+                <nav class="toc"><ol><li><a href="#the-sad-state-of-affairs">The sad state of affairs</a></li><li><a href="#improvements">Improvements</a></li><li><a href="#biting-the-bullet-and-dropping-the-coin">Biting the bullet and dropping the coin</a><ol><li><a href="#the-shopping-list">The shopping list</a></li><li><a href="#the-topology">The topology</a></li><li><a href="#but-you-had-an-edgerouter-x%2C-why-didn%E2%80%99t-you-use-it-as-a-router%3F">But you had an EdgeRouter X, why didn’t you use it as a router?</a></li></ol></li><li><a href="#but-wait%2C-tell-me-more!">But wait, tell me more!</a></li></ol></nav>
+              </aside>
+              <div class="post-content">
+                <p class="subtitle">Or, how I NUC&#39;d everything up.</p>
+                <p>It’s always the way, isn’t it? The builder’s house is need of repairs, the chef’s cupboard is always empty, and the IT professional’s home lab is trash.</p>
+<p>Ah ok, maybe just my lab then…</p>
+<p>For the last five years I’ve been “enjoying” life on ADSL in Melbourne’s outer east — and therefore, I’ve had no real need or desire to drop coin on a decent home lab. Why bother, when my best speed was 7mbps down/1mbps up? Well, with FTTC NBN arriving on my doorstep within the next six months and a reasonably-priced Optus 4G plan to supplement my glacial ADSL, I figured the time was ripe to upgrade.</p>
+<p>That, and my ADSL router decided it was necessary to do a full reboot any time any config directives were changed.</p>
+<hr>
+<h2 id="the-sad-state-of-affairs">The sad state of affairs <a class="anchor-link" href="#the-sad-state-of-affairs">#</a></h2>
+<p>Between 2015 and now, my home network consisted of:</p>
+<ul>
+<li>FritzBox 7270 xDSL router</li>
+<li>QNAP TVS-663 6-bay NAS</li>
+<li>Ubiquiti AP-AC-Pro</li>
+<li>Cisco SG-100D-08 gigabit unmanaged switch</li>
+<li>Ubiquiti Unifi Switch-8 PoE</li>
+</ul>
+<p>The main limitation with this setup was the FritzBox xDSL router. While it had nice ADSL functionality and, to be fair, better reliability at high speeds compared to other routers, it was also quite limited in other respects. For example, it was impossible to change the DNS suffix from “.fritz.box”</p>
+<p>Honestly, it was fine for the average user, but rubbish for any kind of serious customisation.</p>
+<p>The QNAP NAS runs a number of containers, such as the Unifi Controller and the Unifi NVR for my IP cameras. But, it was also proving to be slow, clunky, and increasingly difficult to manage said containers.</p>
+<hr>
+<h2 id="improvements">Improvements <a class="anchor-link" href="#improvements">#</a></h2>
+<p>Well, maybe not.</p>
+<p>Once the NBN works commenced in my area the ADSL speed dropped down to 4mbps down/400kbps up. During the troubleshooting process I bought a new NBN-compatible router, an Asus DSL-AC86U.</p>
+<p>Let me tell you the ways in which this router is an absolute joke:</p>
+<ul>
+<li>The price. It retails for $250</li>
+<li>Almost any change, at all, requires a full reboot. Oh, and it doesn’t tell you it’s about to reboot, it just does it.</li>
+<li>Yes, it has WAN failover. But only from DSL to USB/Ethernet, not to DSL.</li>
+<li>The multi-WAN load balancing doesn’t work — it’s either all or nothing, irrespective of what ratio is used</li>
+<li>Yes, it has an SSH terminal via AsusWRT. But, no cron engine (at least, none that works — cru doesn’t persist jobs between reboots)</li>
+</ul>
+<p>I could go on, but frankly, I’m already bored.</p>
+<h2 id="biting-the-bullet-and-dropping-the-coin">Biting the bullet and dropping the coin <a class="anchor-link" href="#biting-the-bullet-and-dropping-the-coin">#</a></h2>
+<p>It was always my intention to invest in a pfSense-based router come NBN time, either in advance of or after connection. So, borne out of my frustrations with both the FritzBox and the Asus routers, I made myself a pfSense router via the router-on-a-stick design.</p>
+<h3 id="the-shopping-list">The shopping list <a class="anchor-link" href="#the-shopping-list">#</a></h3>
+<ul>
+<li><a href="https://www.scorptec.com.au/product/Branded-Systems/NUC-&amp;-Mini-PC/59984-BOXNUC5PPYH/?member_pricing=true">Intel Mini PC NUC Kit NUC5PPYH</a><br>
+$199.00</li>
+<li><a href="https://www.scorptec.com.au/product/Memory/SODIMM/52039-KVR16LS11-8/?member_pricing=true">1x Kingston KVR16LS11/8 8GB 1600MHz DDR3L SODIMM</a><br>
+$69</li>
+<li><a href="https://www.scorptec.com.au/product/Hard-Drives-&amp;-SSDs/SSD-2.5-&amp;-PCI-Express/70810-WDS120G2G0A/?member_pricing=true">1x Western Digital WD Green 3D NAND 120GB SSD</a><br>
+$32</li>
+</ul>
+<p>In addition, I also had a Ubiquiti EdgeRouter X which I configured in Layer-2 switching mode, to provide the VLANs necessary for a single-NIC router.</p>
+<h3 id="the-topology">The topology <a class="anchor-link" href="#the-topology">#</a></h3>
+<p>As you can see from the diagram below, the pfSense router is a router-on-a-stick; that is, it has one interface carrying traffic separated by VLANs.</p>
+<p><img src="/images/1_omi0RFCCZNWaUQGTgcnjCA.png" alt="Magical packet mystery tour"></p>
+<p>The ADSL router is the POS Asus DSL-AC68U — not configured for bridge mode, because it doesn’t support it — but with everything disabled (DHCP, NAT, firewalled to the nth degree, etc) and with PPPoE forwarding enabled.</p>
+<p>Frustratingly, I still need to maintain a PPPoE connection on the Asus router for PPPoE forwarding to be stable. Without a valid PPPoE connection, the pfSense router can create a PPPoE connection on its own, but it drops after a few seconds. Every. Time.</p>
+<h3 id="but-you-had-an-edgerouter-x%2C-why-didn%E2%80%99t-you-use-it-as-a-router%3F">But you had an EdgeRouter X, why didn’t you use it as a router? <a class="anchor-link" href="#but-you-had-an-edgerouter-x%2C-why-didn%E2%80%99t-you-use-it-as-a-router%3F">#</a></h3>
+<p>Because I didn’t want to.</p>
+<p>I know pfSense like the back of my hand and I knew I could spin up a secure multi-WAN router with load balancing, IDS/IPS, and policy-based routing (spoiler alert for part 2) within a day. Some of that functionality just doesn’t exist on the EdgeRouter X.</p>
+<h2 id="but-wait%2C-tell-me-more!">But wait, tell me more! <a class="anchor-link" href="#but-wait%2C-tell-me-more!">#</a></h2>
+<p>Check out <a href="/making-my-homelab-smarter-part-2/">Part 2</a> for more salacious details.</p>
+
+              </div>
+            </section>
+          </article>
+        </div>
+      </main>
+
+      <aside class="read-next outer"></aside>
+
+      
+
+    <footer class="site-footer outer"></footer>
+
+    </div>
+  </body>
+</html>

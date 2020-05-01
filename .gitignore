@@ -1,5 +1,5 @@
 _site/*
-docs/*
+docs/README*
 deploy/*
 node_modules
 node_modules/*
