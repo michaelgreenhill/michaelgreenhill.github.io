@@ -35,6 +35,7 @@
     "parse-json": "^5.0.0"
   },
   "devDependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@mightyplow/eleventy-plugin-cache-buster": "^1.1.3"
   }
 }

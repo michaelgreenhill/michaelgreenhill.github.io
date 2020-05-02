@@ -7,6 +7,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const readingTime = require('eleventy-plugin-reading-time');
 const pluginSEO = require("eleventy-plugin-seo");
 const pluginTOC = require('eleventy-plugin-toc');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 
 module.exports = function (eleventyConfig) {
@@ -15,7 +16,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(pluginSEO, require("./_data/seo.json"));
-  eleventyConfig.addPlugin(pluginTOC)
+  eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.setUseGitIgnore(false);
   
   const cacheBusterOptions = {

@@ -59,7 +59,7 @@ This is a concept called **microcaching**. There's a volume of information out t
 
 Using the live example from this site:
 
-```
+``` nginx
 proxy_cache_path /opt/cache/ghost_secure levels=1:2 keys_zone=ghost_secure:10m max_size=1g inactive=60m use_temp_path=off;
 proxy_cache_key "$scheme$request_method$host$request_uri";
 proxy_cache_methods GET HEAD;

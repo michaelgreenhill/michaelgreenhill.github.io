@@ -32,7 +32,7 @@ With that in mind, it's trivial to create a key=value stack in Secrets Manager.
 
 Assuming you've been following the AWS best practices and have assigned a role to your EC2 instances, it's just a matter of creating an IAM policy that grants access to the secret, and attaching it to your EC2 role.
 
-```
+``` json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -54,7 +54,7 @@ This policy grants read-only access to your secret (because your EC2 instance sh
 
 The final step is to extract the secret and dump it to a .env file in KEY="value" format.
 
-```
+``` bash
 #!/bin/bash
 
 AWS_SECRET_ID="my-super-secret-secret"

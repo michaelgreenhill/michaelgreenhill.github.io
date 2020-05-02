@@ -25,7 +25,7 @@ Making use of **CloudWatch Events** we can trigger a **Systems Manager** command
 
 The first thing we need to do is define the **event pattern** in CloudWatch Events. 
 
-```
+``` json
 {
   "detail": {
     "eventName": [
@@ -57,7 +57,7 @@ This requires an IAM role that CloudWatch can use, with an IAM policy that enabl
 
 *For best results shake before opening and **ensure that you are adhering to the principle of least privilege**.*
 
-```
+``` json
 {
     "Version": "2012-10-17",
     "Statement": [

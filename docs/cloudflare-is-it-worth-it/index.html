@@ -13,7 +13,8 @@
 <title>Cloudflare - is it worth it?</title>
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
-<link rel="stylesheet" type="text/css" href="/css/custom.css?v=7a88a16b41070bc778b11cf209426543">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=d7ae4beabfcf32c94d9b88ec068cb615">
+<link rel="stylesheet" type="text/css" href="/css/prism-dracula.css?v=4520dcfe35ffae83c7c2e6cb6081528d">
 <link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
 
 <link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=6665236f9459354cefc0f8a0ec2552ca">
@@ -224,33 +225,7 @@
 <p><strong>But nginx can do this for you!</strong> (and yeah, so can Apache, if you like living in the 90’s)</p>
 <p>This is a concept called <strong>microcaching</strong>. There’s a volume of information out there on the benefits microcaching, so instead of delving too deeply I suggest you start with the official nginx blog: <a href="https://www.nginx.com/blog/benefits-of-microcaching-nginx/">https://www.nginx.com/blog/benefits-of-microcaching-nginx/</a></p>
 <p>Using the live example from this site:</p>
-<pre><code>proxy_cache_path /opt/cache/ghost_secure levels=1:2 keys_zone=ghost_secure:10m max_size=1g inactive=60m use_temp_path=off;
-proxy_cache_key &quot;$scheme$request_method$host$request_uri&quot;;
-proxy_cache_methods GET HEAD;
-
-# ...
-
-location {
-    proxy_cache_revalidate        on;
-    proxy_cache_use_stale         updating;
-    proxy_cache_background_update on;
-    proxy_cache_lock              on;
-    proxy_cache                   ghost_secure;
-    proxy_cache_valid             any 10m;
-    proxy_ignore_headers          Cache-Control;
-    proxy_cache_use_stale         error timeout http_500 http_502 http_503 http_504;
-    proxy_cache_bypass            $http_upgrade;
-
-    # ... all you other config directives go here...
-
-    # example proxy_pass configuraton for your backend config
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header Host $http_host;
-    proxy_pass http://127.0.0.1:2369;
-}
-</code></pre>
+<pre class="language-nginx"><code class="language-nginx"><span class="token keyword">proxy_cache_path</span> <span class="token operator">/</span>opt<span class="token operator">/</span>cache<span class="token operator">/</span>ghost_secure levels<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span> keys_zone<span class="token operator">=</span>ghost_secure<span class="token punctuation">:</span><span class="token number">10</span>m max_size<span class="token operator">=</span><span class="token number">1</span>g inactive<span class="token operator">=</span><span class="token number">60</span>m use_temp_path<span class="token operator">=</span>off<span class="token punctuation">;</span><br><span class="token keyword">proxy_cache_key</span> <span class="token string">"$scheme$request_method$host$request_uri"</span><span class="token punctuation">;</span><br><span class="token keyword">proxy_cache_methods</span> GET HEAD<span class="token punctuation">;</span><br><br><span class="token comment"># ...</span><br><br><span class="token keyword">location</span> <span class="token punctuation">{</span><br>    proxy_cache_revalidate        on<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_use_stale</span>         updating<span class="token punctuation">;</span><br>    proxy_cache_background_update on<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_lock</span>              on<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache</span>                   ghost_secure<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_valid</span>             any <span class="token number">10</span>m<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_ignore_headers</span>          Cache<span class="token operator">-</span>Control<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_use_stale</span>         error <span class="token keyword">timeout</span> http_500 http_502 http_503 http_504<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_bypass</span>            <span class="token variable">$http_upgrade</span><span class="token punctuation">;</span><br><br>    <span class="token comment"># ... all you other config directives go here...</span><br><br>    <span class="token comment"># example proxy_pass configuraton for your backend config</span><br>    <span class="token keyword">proxy_set_header</span> X<span class="token operator">-</span>Forwarded<span class="token operator">-</span>For <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_set_header</span> X<span class="token operator">-</span>Forwarded<span class="token operator">-</span>Proto <span class="token variable">$scheme</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_set_header</span> X<span class="token operator">-</span>Real<span class="token operator">-</span>IP <span class="token variable">$remote_addr</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_set_header</span> Host <span class="token variable">$http_host</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_pass</span> <span class="token keyword">http</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token punctuation">:</span><span class="token number">2369</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 <p>Of course, if you’re using fastcgi for a PHP application (for example), you can use the fastcgi caching instead.</p>
 <p>As far as a small blog like this goes there’s little benefit in microcaching: with it disabled, Ghost still renders pages in tidy fashion. But if I was to get the Reddit hug of death, microcaching would save not only my site, but also my wallet.</p>
 
