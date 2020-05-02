@@ -16,7 +16,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(pluginSEO, require("./_data/seo.json"));
   eleventyConfig.addPlugin(pluginTOC)
-
+  eleventyConfig.setUseGitIgnore(false);
   
   const cacheBusterOptions = {
     "outputDirectory": "./docs"
@@ -42,7 +42,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
   eleventyConfig.addPassthroughCopy('favicon.ico');
-
+  eleventyConfig.addPassthroughCopy('robots.txt');
+  
   eleventyConfig.addPassthroughCopy('css', function () {
     return {
       passthroughFileCopy: true

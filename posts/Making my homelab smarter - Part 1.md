@@ -3,11 +3,15 @@ title: Making my homelab smarter - Part 1
 subtitle: Or, how I NUC'd everything up.
 permalink: "{{ title | slug }}/"
 heroimage: /images/1_omi0RFCCZNWaUQGTgcnjCA.png
+layout: post
 tags:
   - post
   - homelab
   - it
 date: 2020-01-07
+author: 
+  name: Michael Greenhill
+  photo: "https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/download.png"
 ---
 
 It's always the way, isn't it? The builder's house is need of repairs, the chef's cupboard is always empty, and the IT professional's home lab is trash.

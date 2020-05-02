@@ -3,11 +3,15 @@ title: Using AWS Secrets Manager for .env files
 subtitle: Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!
 permalink: "{{ title | slug }}/"
 heroimage: https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg
+layout: post
 tags:
   - post
   - aws
   - it
 date: 2020-02-17
+author: 
+  name: Michael Greenhill
+  photo: "https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/download.png"
 ---
 
 Managing environment files for highly-available cloud apps can be tricky. The easiest option, of course, is to embed these environment files into your code repo, but of course, that then commits secrets (passwords, API keys, etc) into the repo for all to see.

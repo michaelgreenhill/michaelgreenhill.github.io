@@ -3,12 +3,16 @@ title: AWS Automation Wizardry
 subtitle: SSM, EC2, IAM, CloudWatch, and other buzzwords.
 permalink: "{{ title | slug }}/"
 heroimage: /images/futurama_01_0105_going_robot_640x360.jpg
+layout: post
 tags:
   - post
   - aws
   - automation
   - it
 date: 2020-04-05
+author: 
+  name: Michael Greenhill
+  photo: "https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/download.png"
 ---
 
 In one of my [previous posts](/using-aws-secrets-manager-for-.env-files/) I demonstrated the use of AWS Secrets Manager for securely keeping and maintaining the state of a Laravel application .env file. 

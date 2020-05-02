@@ -4,6 +4,7 @@ title: Michael Greenhill
 eleventyNavigation:
   key: Home
   order: 1
+tag: page
 ---
 
 # {{ title }}

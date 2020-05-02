@@ -3,13 +3,16 @@ title: Lessons learned from a DDoS attack
 subtitle: Our website got nay-nayed
 permalink: "{{ title | slug }}/"
 heroimage: https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/ddos.png
+layout: post
 tags:
   - post
   - aws
   - ddos
   - it
 date: 2020-02-22
-author: {{ userList.michael }}
+author: 
+  name: Michael Greenhill
+  photo: "https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/download.png"
 ---
 
 One of our brands recently suffered a DDoS attack - thankfully not a sustained one, but enough to impact website availability and rethink our defensive strategies.

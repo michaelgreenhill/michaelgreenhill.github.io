@@ -3,11 +3,15 @@ title: Making my homelab smarter - Part 2
 subtitle: Get routed!
 permalink: "{{ title | slug }}/"
 heroimage: /images/1_1SYWH-QudwNvXrH1VUAlhw.png
+layout: post
 tags:
   - post
   - homelab
   - it
 date: 2020-01-07
+author: 
+  name: Michael Greenhill
+  photo: "https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/download.png"
 ---
 
 Back in [Part 1](/making-my-homelab-smarter-part-1/) I waffled on about the sad state of my internet and what I intended to do about it.

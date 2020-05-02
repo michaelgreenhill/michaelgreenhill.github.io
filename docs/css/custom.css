@@ -189,8 +189,19 @@ span.reading-time {
     font-style: italic; 
 }
 
-/*
-div.post-content {
-    display: block;
+footer {
+    color: #ccc;
+    font-size: 1.4rem; 
 }
-*/
+
+.site-footer {
+    padding-bottom: 0;
+}
+
+.post-content > h1,
+.post-content > h2,
+.post-content > h3,
+.post-content > h4 {
+    padding-top: 80px;
+    margin-top: calc(-80px + .8em) !important;
+}
