@@ -106,12 +106,13 @@
               <div class="heroimage"><img src="{{ heroimage }}"></div>
               {% endif %}
 
-              <aside class="post-aside">
-                <strong>Contents</strong>
-                {{ content | toc | safe }}
-              </aside>
               <div class="post-content">
                 <p class="subtitle">{{ subtitle }}</p>
+                
+                <aside class="post-aside">
+                  <strong>Contents</strong>
+                  {{ content | toc | safe }}
+                </aside>
                 {{ content | safe }}
               </div>
             </section>

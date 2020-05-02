@@ -124,10 +124,10 @@
                         <a href="/">Home</a>
                     </li>
                     <li class="nav-home " role="menuitem">
-                        <a href="/tags/">Tags</a>
+                        <a href="/archives/">Archives</a>
                     </li>
                     <li class="nav-home " role="menuitem">
-                        <a href="/archives/">Archives</a>
+                        <a href="/tags/">Tags</a>
                     </li>
                 </ul>
             </div>
@@ -186,12 +186,13 @@
               <div class="heroimage"><img src="/images/futurama_01_0105_going_robot_640x360.jpg"></div>
               
 
-              <aside class="post-aside">
-                <strong>Contents</strong>
-                <nav class="toc"><ol><li><a href="#enter-the-automator">Enter the automator</a></li><li><a href="#tl%3Bdr">TL;DR</a></li></ol></nav>
-              </aside>
               <div class="post-content">
                 <p class="subtitle">SSM, EC2, IAM, CloudWatch, and other buzzwords.</p>
+                
+                <aside class="post-aside">
+                  <strong>Contents</strong>
+                  <nav class="toc"><ol><li><a href="#enter-the-automator">Enter the automator</a></li><li><a href="#tl%3Bdr">TL;DR</a></li></ol></nav>
+                </aside>
                 <p>In one of my <a href="/using-aws-secrets-manager-for-.env-files/">previous posts</a> I demonstrated the use of AWS Secrets Manager for securely keeping and maintaining the state of a Laravel application .env file.</p>
 <p>Storing it is one thing - but how do you inform the Laravel application of the updated .env file when the secret changes? SSH-ing into each ephemeral EC2 instance is a nightmare: there <em>has</em> to be a better way.</p>
 <h2 id="enter-the-automator">Enter the automator <a class="anchor-link" href="#enter-the-automator">#</a></h2>

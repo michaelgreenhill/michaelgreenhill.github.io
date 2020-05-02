@@ -124,10 +124,10 @@
                         <a href="/">Home</a>
                     </li>
                     <li class="nav-home " role="menuitem">
-                        <a href="/tags/">Tags</a>
+                        <a href="/archives/">Archives</a>
                     </li>
                     <li class="nav-home " role="menuitem">
-                        <a href="/archives/">Archives</a>
+                        <a href="/tags/">Tags</a>
                     </li>
                 </ul>
             </div>
@@ -180,12 +180,13 @@
               <div class="heroimage"><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg"></div>
               
 
-              <aside class="post-aside">
-                <strong>Contents</strong>
-                <nav class="toc"><ol><li><a href="#what-exactly-is-a-secret%3F">What exactly is a secret?</a></li><li><a href="#accessing-the-secrets-from-ec2">Accessing the secrets from EC2</a></li></ol></nav>
-              </aside>
               <div class="post-content">
                 <p class="subtitle">Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!</p>
+                
+                <aside class="post-aside">
+                  <strong>Contents</strong>
+                  <nav class="toc"><ol><li><a href="#what-exactly-is-a-secret%3F">What exactly is a secret?</a></li><li><a href="#accessing-the-secrets-from-ec2">Accessing the secrets from EC2</a></li></ol></nav>
+                </aside>
                 <p>Managing environment files for highly-available cloud apps can be tricky. The easiest option, of course, is to embed these environment files into your code repo, but of course, that then commits secrets (passwords, API keys, etc) into the repo for all to see.</p>
 <p>Yeah, not such a great idea, then.</p>
 <p>One option is to use AWS Secrets Manager. This tool securely stores your secrets (for the princely sum of $0.40 per secret per month) - well, as securely as your IAM policies dictate.</p>
