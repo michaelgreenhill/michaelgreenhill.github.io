@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/making-my-homelab-smarter-part-1/</loc>
+    <lastmod>2020-01-07</lastmod>
+  </url>
+  
+  <url>
+    <loc>/making-my-homelab-smarter-part-2/</loc>
+    <lastmod>2020-01-07</lastmod>
+  </url>
+  
+  <url>
+    <loc>/making-my-homelab-smarter-part-3/</loc>
+    <lastmod>2020-01-08</lastmod>
+  </url>
+  
+  <url>
+    <loc>/night-photography-part-1/</loc>
+    <lastmod>2020-02-16</lastmod>
+  </url>
+  
+  <url>
+    <loc>/using-aws-secrets-manager-for-.env-files/</loc>
+    <lastmod>2020-02-17</lastmod>
+  </url>
+  
+  <url>
+    <loc>/cloudflare-is-it-worth-it/</loc>
+    <lastmod>2020-02-19</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lessons-learned-from-a-ddos-attack/</loc>
+    <lastmod>2020-02-22</lastmod>
+  </url>
+  
+  <url>
+    <loc>/aws-automation-wizardry/</loc>
+    <lastmod>2020-04-05</lastmod>
+  </url>
+  
+  <url>
+    <loc>/page-list/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/archives/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/homelab/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/it/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/cloudflare/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nginx/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/aws/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/automation/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ipv6/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ddos/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/photography/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+</urlset>

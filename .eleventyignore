@@ -1,0 +1,10 @@
+README*
+_site/*
+docs/README*
+deploy/*
+node_modules
+node_modules/*
+docs/node_modules/*
+package-lock.json
+.vscode/*
+secrets
