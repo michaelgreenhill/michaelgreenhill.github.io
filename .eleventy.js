@@ -26,6 +26,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+  eleventyConfig.addLayoutAlias('single', 'layouts/single.njk');
   eleventyConfig.addLayoutAlias('default', 'layouts/post.njk');
 
   eleventyConfig.addFilter("niceDate", function (date) {

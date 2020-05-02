@@ -42,6 +42,11 @@
   </url>
   
   <url>
+    <loc>/about/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
     <loc>/archives/</loc>
     <lastmod>2020-05-02</lastmod>
   </url>
@@ -62,17 +67,27 @@
   </url>
   
   <url>
+    <loc>/tags/cloudflare/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/nginx/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/it/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/aws/</loc>
     <lastmod>2020-05-02</lastmod>
   </url>
   
   <url>
     <loc>/tags/automation/</loc>
-    <lastmod>2020-05-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/it/</loc>
     <lastmod>2020-05-02</lastmod>
   </url>
   
@@ -87,22 +102,12 @@
   </url>
   
   <url>
-    <loc>/tags/ipv6/</loc>
-    <lastmod>2020-05-02</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/photography/</loc>
     <lastmod>2020-05-02</lastmod>
   </url>
   
   <url>
-    <loc>/tags/cloudflare/</loc>
-    <lastmod>2020-05-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/nginx/</loc>
+    <loc>/tags/ipv6/</loc>
     <lastmod>2020-05-02</lastmod>
   </url>
 </urlset>
