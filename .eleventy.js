@@ -27,6 +27,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
   eleventyConfig.addLayoutAlias('single', 'layouts/single.njk');
+  eleventyConfig.addLayoutAlias('sidebar', 'layouts/post-with-sidebar.njk');
   eleventyConfig.addLayoutAlias('default', 'layouts/post.njk');
 
   eleventyConfig.addFilter("niceDate", function (date) {
