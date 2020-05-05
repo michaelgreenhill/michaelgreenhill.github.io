@@ -2,7 +2,7 @@
 title: Lessons learned from a DDoS attack
 subtitle: Our website got nay-nayed
 permalink: "{{ title | slug }}/"
-heroimage: https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/ddos.png
+heroimage: /images/ddos.png
 layout: post
 tags:
   - post
@@ -37,7 +37,7 @@ This was a massive help; we were able to quickly search logs of our reverse-prox
 
 Unfortunately, the one thing we weren't logging were nginx access logs. This could have added value to our incident analysis.
 
-![All the logs, all the time](https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/image-9.png)
+![All the logs, all the time](/images/ddos-image-9.png)
 
 ## Not all attacks can be stopped by fail2ban
 
@@ -45,7 +45,7 @@ We had been heavily dependent on fail2ban as our primary mitigation for DDoSing.
 
 What happens if the log entries don't trigger a fail2ban event?
 
-![Fail2banfail](https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/image-10.png)
+![Fail2banfail](/images/ddos-image-10.png)
 
 Within less than 60 seconds we had nearly 400 TCP CONNECT events to our reverse proxy from four IP addresses. If we had been using a limiter queue on iptables these connections would have been blocked at the firewall level, massively reducing the risk of a successful DDoS event.
 

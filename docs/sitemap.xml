@@ -77,6 +77,26 @@
   </url>
   
   <url>
+    <loc>/tags/homelab/</loc>
+    <lastmod>2020-05-05</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/it/</loc>
+    <lastmod>2020-05-05</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/aws/</loc>
+    <lastmod>2020-05-05</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/automation/</loc>
+    <lastmod>2020-05-05</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/cloudflare/</loc>
     <lastmod>2020-05-05</lastmod>
   </url>
@@ -87,12 +107,12 @@
   </url>
   
   <url>
-    <loc>/tags/it/</loc>
+    <loc>/tags/ipv6/</loc>
     <lastmod>2020-05-05</lastmod>
   </url>
   
   <url>
-    <loc>/tags/automation/</loc>
+    <loc>/tags/ddos/</loc>
     <lastmod>2020-05-05</lastmod>
   </url>
   
@@ -107,22 +127,7 @@
   </url>
   
   <url>
-    <loc>/tags/aws/</loc>
-    <lastmod>2020-05-05</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/ddos/</loc>
-    <lastmod>2020-05-05</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/homelab/</loc>
-    <lastmod>2020-05-05</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/ipv6/</loc>
+    <loc>/tags/photography/</loc>
     <lastmod>2020-05-05</lastmod>
   </url>
   
@@ -133,11 +138,6 @@
   
   <url>
     <loc>/tags/containers/</loc>
-    <lastmod>2020-05-05</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/photography/</loc>
     <lastmod>2020-05-05</lastmod>
   </url>
 </urlset>

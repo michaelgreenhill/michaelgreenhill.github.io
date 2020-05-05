@@ -38,6 +38,10 @@
     .post-full-header {
         padding: 20px 0 35px;
     }
+
+    .post-card-content {
+        margin-top: 1em; 
+    }
 }
 
 .post-card-byline-content {
@@ -247,4 +251,10 @@ div.grid-container .post-header {
 
 div.grid-container .heroimage {
     grid-area: hero; 
+}
+
+@media (prefers-color-scheme: dark) {
+    aside.post-aside {
+        background-color: #333; 
+    }
 }

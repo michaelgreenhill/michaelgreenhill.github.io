@@ -103,13 +103,11 @@ module.exports = function (eleventyConfig) {
     }
   });
 
-  /*
   eleventyConfig.addPassthroughCopy('images', function () {
     return {
       passthroughFileCopy: true
     }
   });
-  */
 
   /* Markdown */
   let markdownIt = require('markdown-it')
