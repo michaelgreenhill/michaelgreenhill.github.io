@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!DOCTYPE html><html lang="en"><head>
 
-    <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="HandheldFriendly" content="True"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="11ty"/>
-<meta name="referrer" content="no-referrer-when-downgrade"/>
-<meta name="description" content="IT and Photography"/>
+    <meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="11ty">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="description" content="IT and Photography">
 
 <title>Lessons learned from a DDoS attack</title>
 
+<link rel="dns-prefetch" href="https://analytics.google.com/">
+<link rel="dns-prefetch" href="https://s3-ap-southeast-2.amazonaws.com/">
+
 <link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
-<link rel="stylesheet" type="text/css" href="/css/custom.css?v=b0412331e16ef09d5e48433f88886444">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=475807f7da7529efb98b3a4eedbc742c">
 <link rel="stylesheet" type="text/css" href="/css/prism-dracula.css?v=4520dcfe35ffae83c7c2e6cb6081528d">
 <link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
 
-<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=b0c30c9a1a936300c46335f7a614be73">
+<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=84188a7642d00c14fefb5c6849eda9f6">
 
 
 
@@ -33,43 +35,49 @@
       gtag('config', 'UA-97297631-1');
     </script>
 
-    <link rel="canonical" href="https://michaelgreenhill.net/lessons-learned-from-a-ddos-attack/"/>
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+    }
+</script> 
 
-    <meta property="og:site_name" content="Michael Greenhill"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Lessons learned from a DDoS attack"/>
-    <meta property="og:description" content="Our website got nay-nayed"/>
-    <meta property="og:url" content="https://michaelgreenhill.net/lessons-learned-from-a-ddos-attack/"/>
-    <meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/ddos.png"/>
-    <meta property="article:published_time" content="2020-02-22T11:00:00+11:00"/>
-    <meta property="article:modified_time" content="2020-02-22T11:00:00+11:00"/>
+    <link rel="canonical" href="https://michaelgreenhill.net/lessons-learned-from-a-ddos-attack/">
+
+    <meta property="og:site_name" content="Michael Greenhill">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Lessons learned from a DDoS attack">
+    <meta property="og:description" content="Our website got nay-nayed">
+    <meta property="og:url" content="https://michaelgreenhill.net/lessons-learned-from-a-ddos-attack/">
+    <meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/ddos.png">
+    <meta property="article:published_time" content="2020-02-22T11:00:00+11:00">
+    <meta property="article:modified_time" content="2020-02-22T11:00:00+11:00">
 
     
     
     
     
-      <meta property="article:tag" content="aws"/>
+      <meta property="article:tag" content="aws">
     
     
     
-      <meta property="article:tag" content="ddos"/>
+      <meta property="article:tag" content="ddos">
     
     
     
-      <meta property="article:tag" content="it"/>
+      <meta property="article:tag" content="it">
     
     
 
-    <meta property="article:publisher" content="https://facebook.com/aspect19"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Lessons learned from a DDoS attack"/>
-    <meta name="twitter:description" content="Our website got nay-nayed"/>
-    <meta name="twitter:url" content="https://michaelgreenhill.net/lessons-learned-from-a-ddos-attack/"/>
-    <meta name="twitter:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/ddos.png"/>
-    <meta name="twitter:label1" content="Written by"/>
-    <meta name="twitter:data1" content="Michael Greenhill"/>
-    <meta name="twitter:label2" content="Filed under"/>
-    <meta name="twitter:data2" content="it, ddos, nginx"/>
+    <meta property="article:publisher" content="https://facebook.com/aspect19">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lessons learned from a DDoS attack">
+    <meta name="twitter:description" content="Our website got nay-nayed">
+    <meta name="twitter:url" content="https://michaelgreenhill.net/lessons-learned-from-a-ddos-attack/">
+    <meta name="twitter:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/ddos.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Michael Greenhill">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="it, ddos, nginx">
 
     <script type="application/ld+json">
       {
@@ -149,8 +157,8 @@
     <div class="site-nav-right">
         <div class="social-links">
             <a class="social-link social-link-fb" href="https://facebook.com/aspect19" title="Facebook" target="_blank" rel="noopener">
-                <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"/>
                 </svg>
             </a>
         </div>
@@ -204,10 +212,10 @@
                 
                 <aside class="post-aside">
                   <strong>Contents</strong>
-                  <nav class="toc"><ol><li><a href="#what%E2%80%99s-a-ddos-attack%3F">What’s a DDoS attack?</a></li><li><a href="#log-everything">Log everything</a></li><li><a href="#not-all-attacks-can-be-stopped-by-fail2ban">Not all attacks can be stopped by fail2ban</a></li><li><a href="#don%E2%80%99t-put-all-your-eggs-in-one-basket">Don’t put all your eggs in one basket</a></li><li><a href="#microcache">Microcache</a></li><li><a href="#mitigations">Mitigations</a></li></ol></nav>
+                  <nav class="toc"><ol><li><a href="#what%E2%80%99s-a-ddos-attack%3F">What&#x2019;s a DDoS attack?</a></li><li><a href="#log-everything">Log everything</a></li><li><a href="#not-all-attacks-can-be-stopped-by-fail2ban">Not all attacks can be stopped by fail2ban</a></li><li><a href="#don%E2%80%99t-put-all-your-eggs-in-one-basket">Don&#x2019;t put all your eggs in one basket</a></li><li><a href="#microcache">Microcache</a></li><li><a href="#mitigations">Mitigations</a></li></ol></nav>
                 </aside>
                 <p>One of our brands recently suffered a DDoS attack - thankfully not a sustained one, but enough to impact website availability and rethink our defensive strategies.</p>
-<h2 id="what%E2%80%99s-a-ddos-attack%3F">What’s a DDoS attack? <a class="anchor-link" href="#what%E2%80%99s-a-ddos-attack%3F">#</a></h2>
+<h2 id="what%E2%80%99s-a-ddos-attack%3F">What&#x2019;s a DDoS attack? <a class="anchor-link" href="#what%E2%80%99s-a-ddos-attack%3F">#</a></h2>
 <p>DDoS stands for <strong>Distributed Denial of Service</strong>. From my besties over at Cloudflare:</p>
 <blockquote>
 <p>A distributed denial-of-service (DDoS) attack is a malicious attempt to disrupt normal traffic of a targeted server, service or network by overwhelming the target or its surrounding infrastructure with a flood of Internet traffic.</p>
@@ -218,24 +226,24 @@
 <p>Absolutely everything. All the logs, all the time.</p>
 <p>I had previously set up a centralised log ingestion and analysis system (Graylog) on-prem with a combination of rsyslog and nxlog feeding messages into discrete streams, with extractors to convert the plain text logs into meaningful data.</p>
 <p>This was a massive help; we were able to quickly search logs of our reverse-proxy server and our backend Docker instances for messages relating to the incident. We were able to look for a specific timeframe, find the remote IP addresses where the attack originated from, and then search the logs for the rest of our fleet to see if the attacker had been probing anything else.</p>
-<p>Unfortunately, the one thing we weren’t logging were nginx access logs. This could have added value to our incident analysis.</p>
+<p>Unfortunately, the one thing we weren&#x2019;t logging were nginx access logs. This could have added value to our incident analysis.</p>
 <p><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/image-9.png" alt="All the logs, all the time"></p>
 <h2 id="not-all-attacks-can-be-stopped-by-fail2ban">Not all attacks can be stopped by fail2ban <a class="anchor-link" href="#not-all-attacks-can-be-stopped-by-fail2ban">#</a></h2>
 <p>We had been heavily dependent on fail2ban as our primary mitigation for DDoSing. However, fail2ban works from the logfiles of services it monitors - nginx, sshd, etc.</p>
-<p>What happens if the log entries don’t trigger a fail2ban event?</p>
+<p>What happens if the log entries don&#x2019;t trigger a fail2ban event?</p>
 <p><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/image-10.png" alt="Fail2banfail"></p>
 <p>Within less than 60 seconds we had nearly 400 TCP CONNECT events to our reverse proxy from four IP addresses. If we had been using a limiter queue on iptables these connections would have been blocked at the firewall level, massively reducing the risk of a successful DDoS event.</p>
-<h2 id="don%E2%80%99t-put-all-your-eggs-in-one-basket">Don’t put all your eggs in one basket <a class="anchor-link" href="#don%E2%80%99t-put-all-your-eggs-in-one-basket">#</a></h2>
-<p>Due to a myriad of political reasons, this brand’s website was not load balanced and not protected by a WAF. The result was obvious; the backend server crumbled under the load, and our frontend server started throwing HTTP 500 outage pages.</p>
-<p>Further, we naivley believed our datacentre would shield us from a DDoS attack. The truth of the matter is, this attack was of such a small scale that it didn’t even register on their alerting, instead showing up as little more than a surge of traffic synonomous with a flash sale/click frenzy. Instead, our website gave way before the DDoS attack fully gained momentum.</p>
+<h2 id="don%E2%80%99t-put-all-your-eggs-in-one-basket">Don&#x2019;t put all your eggs in one basket <a class="anchor-link" href="#don%E2%80%99t-put-all-your-eggs-in-one-basket">#</a></h2>
+<p>Due to a myriad of political reasons, this brand&#x2019;s website was not load balanced and not protected by a WAF. The result was obvious; the backend server crumbled under the load, and our frontend server started throwing HTTP 500 outage pages.</p>
+<p>Further, we naivley believed our datacentre would shield us from a DDoS attack. The truth of the matter is, this attack was of such a small scale that it didn&#x2019;t even register on their alerting, instead showing up as little more than a surge of traffic synonomous with a flash sale/click frenzy. Instead, our website gave way before the DDoS attack fully gained momentum.</p>
 <h2 id="microcache">Microcache <a class="anchor-link" href="#microcache">#</a></h2>
-<p>The evidence gathered in the course of the investigation suggests that our backend web application gave up the ghost under the load, before our datacentre’s DDoS protection even registered it. That doesn’t bode well for our marketing department. Suppose they organised a click frenzy sale, and our traffic volumes spiked?</p>
+<p>The evidence gathered in the course of the investigation suggests that our backend web application gave up the ghost under the load, before our datacentre&#x2019;s DDoS protection even registered it. That doesn&#x2019;t bode well for our marketing department. Suppose they organised a click frenzy sale, and our traffic volumes spiked?</p>
 <p>One way to mitigate that is to leverage the microcaching functionality of nginx. This little tool lets us cache parts of the website for short periods of time (e.g. 30 seconds), resulting in significant reduction in resource usage on the backend servers.</p>
-<p>Now, this would’ve done almost nothing to mitigate the DDoS attack. At best, it would have prolonged it enough for our datacentre’s DDOS protection to get into gear. However, it’s an important real-world demonstration of the capabilities of that brand’s website.</p>
+<p>Now, this would&#x2019;ve done almost nothing to mitigate the DDoS attack. At best, it would have prolonged it enough for our datacentre&#x2019;s DDOS protection to get into gear. However, it&#x2019;s an important real-world demonstration of the capabilities of that brand&#x2019;s website.</p>
 <h2 id="mitigations">Mitigations <a class="anchor-link" href="#mitigations">#</a></h2>
-<p>Well, Cloudflare is an obvious way to mitigate the risk of a DDoS, but you all know my feelings on Cloudflare…</p>
-<p>The current plan is to move this brand’s site to AWS, at which point it’ll go behind an auto-scaling group, an application load balancer, and a WAF.</p>
-<p><img src="https://media1.giphy.com/media/wvWJOoYmFnSp2/giphy.webp" alt="Surely you can't be serious?"></p>
+<p>Well, Cloudflare is an obvious way to mitigate the risk of a DDoS, but you all know my feelings on Cloudflare&#x2026;</p>
+<p>The current plan is to move this brand&#x2019;s site to AWS, at which point it&#x2019;ll go behind an auto-scaling group, an application load balancer, and a WAF.</p>
+<p><img src="https://media1.giphy.com/media/wvWJOoYmFnSp2/giphy.webp" alt="Surely you can&apos;t be serious?"></p>
 
               </div>
             </section>
@@ -248,10 +256,10 @@
       <footer class="site-footer outer">
     <div class="inner">
         <p>The views on this website are entirely my own and do not reflect those of my employer, my country, or the small alien that controls this flesh prison.</p>
-        <p>All text copyright &copy; Michael Greenhill.</p>
+        <p>All text copyright &#xA9; Michael Greenhill.</p>
     </div>
 </footer>
 
     </div>
-  </body>
-</html>
+  
+</body></html>

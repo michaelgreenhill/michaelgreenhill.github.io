@@ -1,4 +1,5 @@
 <meta charset="utf-8"/>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,6 +8,9 @@
 <meta name="description" content="{{ site.subtitle }}"/>
 
 <title>{{ renderData.title or title or metadata.title }}</title>
+
+<link rel="dns-prefetch" href="https://analytics.google.com/" >
+<link rel="dns-prefetch" href="https://s3-ap-southeast-2.amazonaws.com/" >
 
 <link rel="stylesheet" type="text/css" href="/css/screen.css"/>
 <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
@@ -17,3 +21,9 @@
 
 
 {% include 'etc/_googletag.njk' %}
+
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+    }
+</script> 

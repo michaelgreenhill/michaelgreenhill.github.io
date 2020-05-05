@@ -2,7 +2,7 @@
 title: Cloudflare - is it worth it?
 subtitle: I don't have time for your slow website proxying!
 permalink: "{{ title | slug }}/"
-heroimage: https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/cloudflare1250-1.png
+heroimage: /images/cloudflare1250-1.png
 layout: post
 tags:
   - post
@@ -29,7 +29,7 @@ We're talking about a 600ms page load penalty. Considering that the native (i.e.
 
 For the visually-inclined:
 
-![Direct to nginx](https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/michaelgreenhill.net-direct-nocaching-1.png)
+![Direct to nginx](/images/michaelgreenhill.net-direct-nocaching-1.png)
 
 ...versus....
 

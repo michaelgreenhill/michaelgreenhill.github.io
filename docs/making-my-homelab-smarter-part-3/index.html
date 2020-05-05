@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!DOCTYPE html><html lang="en"><head>
 
-    <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="HandheldFriendly" content="True"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="11ty"/>
-<meta name="referrer" content="no-referrer-when-downgrade"/>
-<meta name="description" content="IT and Photography"/>
+    <meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="11ty">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="description" content="IT and Photography">
 
 <title>Making my homelab smarter - Part 3</title>
 
+<link rel="dns-prefetch" href="https://analytics.google.com/">
+<link rel="dns-prefetch" href="https://s3-ap-southeast-2.amazonaws.com/">
+
 <link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
-<link rel="stylesheet" type="text/css" href="/css/custom.css?v=b0412331e16ef09d5e48433f88886444">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=475807f7da7529efb98b3a4eedbc742c">
 <link rel="stylesheet" type="text/css" href="/css/prism-dracula.css?v=4520dcfe35ffae83c7c2e6cb6081528d">
 <link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
 
-<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=b0c30c9a1a936300c46335f7a614be73">
+<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=84188a7642d00c14fefb5c6849eda9f6">
 
 
 
@@ -33,43 +35,49 @@
       gtag('config', 'UA-97297631-1');
     </script>
 
-    <link rel="canonical" href="https://michaelgreenhill.net/making-my-homelab-smarter-part-3/"/>
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+    }
+</script> 
 
-    <meta property="og:site_name" content="Michael Greenhill"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Making my homelab smarter - Part 3"/>
-    <meta property="og:description" content="Compu-Global-Hyper-Mega-Net"/>
-    <meta property="og:url" content="https://michaelgreenhill.net/making-my-homelab-smarter-part-3/"/>
-    <meta property="og:image" content="/images/1_F5iT46roUJaBhAOV3fJNjA.png"/>
-    <meta property="article:published_time" content="2020-01-08T11:00:00+11:00"/>
-    <meta property="article:modified_time" content="2020-01-08T11:00:00+11:00"/>
+    <link rel="canonical" href="https://michaelgreenhill.net/making-my-homelab-smarter-part-3/">
+
+    <meta property="og:site_name" content="Michael Greenhill">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Making my homelab smarter - Part 3">
+    <meta property="og:description" content="Compu-Global-Hyper-Mega-Net">
+    <meta property="og:url" content="https://michaelgreenhill.net/making-my-homelab-smarter-part-3/">
+    <meta property="og:image" content="/images/1_F5iT46roUJaBhAOV3fJNjA.png">
+    <meta property="article:published_time" content="2020-01-08T11:00:00+11:00">
+    <meta property="article:modified_time" content="2020-01-08T11:00:00+11:00">
 
     
     
     
     
-      <meta property="article:tag" content="homelab"/>
+      <meta property="article:tag" content="homelab">
     
     
     
-      <meta property="article:tag" content="it"/>
+      <meta property="article:tag" content="it">
     
     
     
-      <meta property="article:tag" content="ipv6"/>
+      <meta property="article:tag" content="ipv6">
     
     
 
-    <meta property="article:publisher" content="https://facebook.com/aspect19"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Making my homelab smarter - Part 3"/>
-    <meta name="twitter:description" content="Compu-Global-Hyper-Mega-Net"/>
-    <meta name="twitter:url" content="https://michaelgreenhill.net/making-my-homelab-smarter-part-3/"/>
-    <meta name="twitter:image" content="/images/1_F5iT46roUJaBhAOV3fJNjA.png"/>
-    <meta name="twitter:label1" content="Written by"/>
-    <meta name="twitter:data1" content="Michael Greenhill"/>
-    <meta name="twitter:label2" content="Filed under"/>
-    <meta name="twitter:data2" content="it, ddos, nginx"/>
+    <meta property="article:publisher" content="https://facebook.com/aspect19">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Making my homelab smarter - Part 3">
+    <meta name="twitter:description" content="Compu-Global-Hyper-Mega-Net">
+    <meta name="twitter:url" content="https://michaelgreenhill.net/making-my-homelab-smarter-part-3/">
+    <meta name="twitter:image" content="/images/1_F5iT46roUJaBhAOV3fJNjA.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Michael Greenhill">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="it, ddos, nginx">
 
     <script type="application/ld+json">
       {
@@ -149,8 +157,8 @@
     <div class="site-nav-right">
         <div class="social-links">
             <a class="social-link social-link-fb" href="https://facebook.com/aspect19" title="Facebook" target="_blank" rel="noopener">
-                <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"/>
                 </svg>
             </a>
         </div>
@@ -196,7 +204,7 @@
               </div>
 
               
-              <div class="heroimage" style="background-image: url(/images/1_F5iT46roUJaBhAOV3fJNjA.png);"><div><img src="/images/1_F5iT46roUJaBhAOV3fJNjA.png"></div></div>
+              <div class="heroimage" style="background-image: url(/images/1_F5iT46roUJaBhAOV3fJNjA.png);"><div><picture><source srcset="/images/1_F5iT46roUJaBhAOV3fJNjA.250.webp 250w, /images/1_F5iT46roUJaBhAOV3fJNjA.400.webp 400w, /images/1_F5iT46roUJaBhAOV3fJNjA.510.webp 510w" sizes="100vw" type="image/webp"><source srcset="/images/1_F5iT46roUJaBhAOV3fJNjA.250.png 250w, /images/1_F5iT46roUJaBhAOV3fJNjA.400.png 400w, /images/1_F5iT46roUJaBhAOV3fJNjA.510.png 510w" sizes="100vw" type="image/png"><img src="/images/1_F5iT46roUJaBhAOV3fJNjA.png" height="161" width="510" loading="lazy"></picture></div></div>
               
 
               <div class="post-content">
@@ -206,43 +214,43 @@
                   <strong>Contents</strong>
                   <nav class="toc"><ol><li><a href="#the-big%2C-scary%2C-ipv6-monster">The big, scary, IPv6 monster</a></li><li><a href="#taming%2C-understanding%2C-and-eventually%2C-loving-the-monster">Taming, understanding, and eventually, loving the monster</a></li><li><a href="#once-again%2C-get-your-firewall-sorted-out">Once again, get your firewall sorted out</a></li><li><a href="#glossary">Glossary</a></li></ol></nav>
                 </aside>
-                <p>Let’s recap. Back in <a href="/making-my-homelab-smarter-part-1">Part 1</a>, I had a proper grumble about ADSL and routers. In <a href="/making-my-homelab-smarter-part-2">Part 2</a> we enjoyed a good chat about multi-WAN (load balancing, failover) and policy-based routing.</p>
+                <p>Let&#x2019;s recap. Back in <a href="/making-my-homelab-smarter-part-1">Part 1</a>, I had a proper grumble about ADSL and routers. In <a href="/making-my-homelab-smarter-part-2">Part 2</a> we enjoyed a good chat about multi-WAN (load balancing, failover) and policy-based routing.</p>
 <h2 id="the-big%2C-scary%2C-ipv6-monster">The big, scary, IPv6 monster <a class="anchor-link" href="#the-big%2C-scary%2C-ipv6-monster">#</a></h2>
-<p>For those who don’t know, we’re out of IPv4 addresses. Globally. They’re all gone. They even looked behind the fridge for more. So, it’s time to embrace IPv6 (so far as your ISP will allow it!).</p>
-<p>My ISP, Internode, gives me a delegated /56 block of addresses. “What does /56 mean?” I hear you all cry? Basically, instead of getting a single public IP address (as was typically the case with IPv4), I have <strong>4,722,366,482,869,645,213,696</strong> publicly-routable addresses to play with.</p>
-<p>It’s a visually offensive number. Unfathomably large. I don’t even know which “illion” that comes out to. I tried to frame it as the number of seconds in a century, and it still came out to be a ridiculous number of centuries.</p>
-<p>So while some of us are used to the IPv4 dotted-quad notation (192.168.1.1 with a subnet mask of 255.255.255.0), IPv6 goes a bit crazy and calls it the “canonical textual representation format” — one of those terms that just makes me feel warm and fuzzy inside — which looks something like 2001:db8:1234:0000:0000:0000:0000:0001. Thankfully, that can be shortened to 2001:db8:1234::1. For some quality bedtime reading, I suggest checking out the <a href="https://en.wikipedia.org/wiki/IPv6_address">Wikipedia article on IPv6</a>.</p>
+<p>For those who don&#x2019;t know, we&#x2019;re out of IPv4 addresses. Globally. They&#x2019;re all gone. They even looked behind the fridge for more. So, it&#x2019;s time to embrace IPv6 (so far as your ISP will allow it!).</p>
+<p>My ISP, Internode, gives me a delegated /56 block of addresses. &#x201C;What does /56 mean?&#x201D; I hear you all cry? Basically, instead of getting a single public IP address (as was typically the case with IPv4), I have <strong>4,722,366,482,869,645,213,696</strong> publicly-routable addresses to play with.</p>
+<p>It&#x2019;s a visually offensive number. Unfathomably large. I don&#x2019;t even know which &#x201C;illion&#x201D; that comes out to. I tried to frame it as the number of seconds in a century, and it still came out to be a ridiculous number of centuries.</p>
+<p>So while some of us are used to the IPv4 dotted-quad notation (192.168.1.1 with a subnet mask of 255.255.255.0), IPv6 goes a bit crazy and calls it the &#x201C;canonical textual representation format&#x201D; &#x2014; one of those terms that just makes me feel warm and fuzzy inside &#x2014; which looks something like 2001:db8:1234:0000:0000:0000:0000:0001. Thankfully, that can be shortened to 2001:db8:1234::1. For some quality bedtime reading, I suggest checking out the <a href="https://en.wikipedia.org/wiki/IPv6_address">Wikipedia article on IPv6</a>.</p>
 <h2 id="taming%2C-understanding%2C-and-eventually%2C-loving-the-monster">Taming, understanding, and eventually, loving the monster <a class="anchor-link" href="#taming%2C-understanding%2C-and-eventually%2C-loving-the-monster">#</a></h2>
-<p>Thanks to some epic sleuthing (aka Google) I’ve got the following recipe to get IPv6 working both at the edge of and inside my network.</p>
-<p><em>Disclaimer: IPv6 is <strong>globally routable!</strong> The concept of NAT, and the security-through-obscurity that it provides, does not exist in IPv6. Any IPv6 addresses that you issue to your LAN computers can be reached from the internet — unless you have a good firewall. I take no responsibility if you get all virus’d up.</em></p>
-<p>The first thing we need to do is set our WAN interface’s IPv6 configuration to <strong>DHCP6</strong>. This will get a /64 address from our ISP and provide a path out to the internet.</p>
-<p><img src="/images/1_KIOqbpN_DiUfS5Xk98PrqA.png" alt="So far, so good"></p>
+<p>Thanks to some epic sleuthing (aka Google) I&#x2019;ve got the following recipe to get IPv6 working both at the edge of and inside my network.</p>
+<p><em>Disclaimer: IPv6 is <strong>globally routable!</strong> The concept of NAT, and the security-through-obscurity that it provides, does not exist in IPv6. Any IPv6 addresses that you issue to your LAN computers can be reached from the internet &#x2014; unless you have a good firewall. I take no responsibility if you get all virus&#x2019;d up.</em></p>
+<p>The first thing we need to do is set our WAN interface&#x2019;s IPv6 configuration to <strong>DHCP6</strong>. This will get a /64 address from our ISP and provide a path out to the internet.</p>
+<p><picture><source srcset="/images/1_KIOqbpN_DiUfS5Xk98PrqA.250.webp 250w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.400.webp 400w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.550.webp 550w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.700.webp 700w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.850.webp 850w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.1000.webp 1000w" sizes="100vw" type="image/webp"><source srcset="/images/1_KIOqbpN_DiUfS5Xk98PrqA.250.png 250w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.400.png 400w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.550.png 550w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.700.png 700w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.850.png 850w, /images/1_KIOqbpN_DiUfS5Xk98PrqA.1000.png 1000w" sizes="100vw" type="image/png"><img src="/images/1_KIOqbpN_DiUfS5Xk98PrqA.png" alt="So far, so good" height="379" width="1000" loading="lazy"></picture></p>
 <p>The trick here is to use the IPv4 interface (our PPPoE ADSL tunnel) to request our IPv6 connectivity.</p>
-<p><img src="/images/1_Sw0YDnf5gPJSbIjM1VoGoA.png" alt="The 6 in IPv6 stands for “god damn enormous”"></p>
-<p>Save and apply the changes, then head over to the LAN interface. Here’s where it gets interesting. Set the IPv6 configuration type to <strong>Track Interface…</strong></p>
-<p><img src="/images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.png" alt="&quot;Track Interface&quot; is what used to happen when I passed out while running. Say that one out loud."></p>
-<p>…then scroll down to the IPv6 Track Interface section, and set the <strong>IPv6 Interface</strong> to <strong>WAN</strong> and the <strong>Prefix ID</strong> to <strong>0</strong>.</p>
-<p><img src="/images/1_PqucCadu7X-4ZAcNumGFhQ.png" alt="The Prefix ID may not be 0 — this may require some tweaking and contact with your ISP."></p>
+<p><picture><source srcset="/images/1_Sw0YDnf5gPJSbIjM1VoGoA.250.webp 250w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.400.webp 400w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.550.webp 550w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.700.webp 700w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.850.webp 850w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.1000.webp 1000w" sizes="100vw" type="image/webp"><source srcset="/images/1_Sw0YDnf5gPJSbIjM1VoGoA.250.png 250w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.400.png 400w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.550.png 550w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.700.png 700w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.850.png 850w, /images/1_Sw0YDnf5gPJSbIjM1VoGoA.1000.png 1000w" sizes="100vw" type="image/png"><img src="/images/1_Sw0YDnf5gPJSbIjM1VoGoA.png" alt="The 6 in IPv6 stands for &quot;god damn enormous&quot;" height="307" width="1000" loading="lazy"></picture></p>
+<p>Save and apply the changes, then head over to the LAN interface. Here&#x2019;s where it gets interesting. Set the IPv6 configuration type to <strong>Track Interface&#x2026;</strong></p>
+<p><picture><source srcset="/images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.250.webp 250w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.400.webp 400w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.550.webp 550w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.700.webp 700w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.850.webp 850w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.1000.webp 1000w" sizes="100vw" type="image/webp"><source srcset="/images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.250.png 250w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.400.png 400w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.550.png 550w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.700.png 700w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.850.png 850w, /images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.1000.png 1000w" sizes="100vw" type="image/png"><img src="/images/1_86QT4D8YTA-7Y5Sk_Vbt_Q.png" alt="&quot;Track Interface&quot; is what used to happen when I passed out while running. Say that one out loud." height="438" width="1000" loading="lazy"></picture></p>
+<p>&#x2026;then scroll down to the IPv6 Track Interface section, and set the <strong>IPv6 Interface</strong> to <strong>WAN</strong> and the <strong>Prefix ID</strong> to <strong>0</strong>.</p>
+<p><picture><source srcset="/images/1_PqucCadu7X-4ZAcNumGFhQ.250.webp 250w, /images/1_PqucCadu7X-4ZAcNumGFhQ.400.webp 400w, /images/1_PqucCadu7X-4ZAcNumGFhQ.550.webp 550w, /images/1_PqucCadu7X-4ZAcNumGFhQ.700.webp 700w, /images/1_PqucCadu7X-4ZAcNumGFhQ.850.webp 850w, /images/1_PqucCadu7X-4ZAcNumGFhQ.1000.webp 1000w" sizes="100vw" type="image/webp"><source srcset="/images/1_PqucCadu7X-4ZAcNumGFhQ.250.png 250w, /images/1_PqucCadu7X-4ZAcNumGFhQ.400.png 400w, /images/1_PqucCadu7X-4ZAcNumGFhQ.550.png 550w, /images/1_PqucCadu7X-4ZAcNumGFhQ.700.png 700w, /images/1_PqucCadu7X-4ZAcNumGFhQ.850.png 850w, /images/1_PqucCadu7X-4ZAcNumGFhQ.1000.png 1000w" sizes="100vw" type="image/png"><img src="/images/1_PqucCadu7X-4ZAcNumGFhQ.png" alt="The Prefix ID may not be 0 &#x2014; this may require some tweaking and contact with your ISP." height="158" width="1000" loading="lazy"></picture></p>
 <p>Save and apply, then head to the <strong>Status &gt; Interfaces</strong> page. This will show you your WAN IPv6, your LAN IPv6, and any IPv6 Link Local addresses.</p>
-<p><img src="/images/1_hZgDYaeBrvezuxnw4ozFAg.png" alt="Magic!"></p>
+<p><picture><source srcset="/images/1_hZgDYaeBrvezuxnw4ozFAg.250.webp 250w, /images/1_hZgDYaeBrvezuxnw4ozFAg.400.webp 400w, /images/1_hZgDYaeBrvezuxnw4ozFAg.510.webp 510w" sizes="100vw" type="image/webp"><source srcset="/images/1_hZgDYaeBrvezuxnw4ozFAg.250.png 250w, /images/1_hZgDYaeBrvezuxnw4ozFAg.400.png 400w, /images/1_hZgDYaeBrvezuxnw4ozFAg.510.png 510w" sizes="100vw" type="image/png"><img src="/images/1_hZgDYaeBrvezuxnw4ozFAg.png" alt="Magic!" height="774" width="510" loading="lazy"></picture></p>
 <p>The next step, of course, is configuring pfSense to issue IPv6 addresses to machines on your network. Head on over to Services &gt; DHCPv6 Server &amp; RA.</p>
-<p>While it looks daunting there’s actually very little that needs configuring here:</p>
+<p>While it looks daunting there&#x2019;s actually very little that needs configuring here:</p>
 <ul>
 <li>Enable DHCPv6 server on interface LAN</li>
 <li>Set the range from ::1000 to ::2000 (or whatever size you want)</li>
 <li>Set the DNS servers</li>
 <li>Save</li>
 </ul>
-<p><img src="/images/1_yMMvcM4ECmFpVGPRbYqjUA.png" alt="I’m using the ::1 address from my /56 subnet as the DNS server — i.e., the pfSense router."></p>
-<p>The final step is to configure the <strong>Router Advertisements</strong> section. You’ll have noticed that the DHCPv6 configuration doesn’t have an option to specify the default gateway — IPv6 does away with the concept of static gateways and, using the <a href="https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol">Neighbor Discovery Protocol</a> (NDP), announces to the network what the router (aka default gateway) is.</p>
-<p><img src="/images/1_OXaSP4H123fBKGev11y0nQ.png" alt="Probably should caption this, eh"></p>
+<p><picture><source srcset="/images/1_yMMvcM4ECmFpVGPRbYqjUA.250.webp 250w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.400.webp 400w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.550.webp 550w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.700.webp 700w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.850.webp 850w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.1000.webp 1000w" sizes="100vw" type="image/webp"><source srcset="/images/1_yMMvcM4ECmFpVGPRbYqjUA.250.png 250w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.400.png 400w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.550.png 550w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.700.png 700w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.850.png 850w, /images/1_yMMvcM4ECmFpVGPRbYqjUA.1000.png 1000w" sizes="100vw" type="image/png"><img src="/images/1_yMMvcM4ECmFpVGPRbYqjUA.png" alt="I&apos;m using the ::1 address from my /56 subnet as the DNS server &#x2014; i.e., the pfSense router." height="488" width="1000" loading="lazy"></picture></p>
+<p>The final step is to configure the <strong>Router Advertisements</strong> section. You&#x2019;ll have noticed that the DHCPv6 configuration doesn&#x2019;t have an option to specify the default gateway &#x2014; IPv6 does away with the concept of static gateways and, using the <a href="https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol">Neighbor Discovery Protocol</a> (NDP), announces to the network what the router (aka default gateway) is.</p>
+<p><picture><source srcset="/images/1_OXaSP4H123fBKGev11y0nQ.250.webp 250w, /images/1_OXaSP4H123fBKGev11y0nQ.400.webp 400w, /images/1_OXaSP4H123fBKGev11y0nQ.550.webp 550w, /images/1_OXaSP4H123fBKGev11y0nQ.700.webp 700w, /images/1_OXaSP4H123fBKGev11y0nQ.850.webp 850w, /images/1_OXaSP4H123fBKGev11y0nQ.1000.webp 1000w" sizes="100vw" type="image/webp"><source srcset="/images/1_OXaSP4H123fBKGev11y0nQ.250.png 250w, /images/1_OXaSP4H123fBKGev11y0nQ.400.png 400w, /images/1_OXaSP4H123fBKGev11y0nQ.550.png 550w, /images/1_OXaSP4H123fBKGev11y0nQ.700.png 700w, /images/1_OXaSP4H123fBKGev11y0nQ.850.png 850w, /images/1_OXaSP4H123fBKGev11y0nQ.1000.png 1000w" sizes="100vw" type="image/png"><img src="/images/1_OXaSP4H123fBKGev11y0nQ.png" alt="Probably should caption this, eh" height="642" width="1000" loading="lazy"></picture></p>
 <p>Lastly, at the bottom of the page, check the checkbox next to <strong>Use same settings as DHCPv6 server</strong>, and click <strong>Save</strong></p>
-<p><img src="/images/1_DcjQ3vTDFE-k7Q_PAatOPw.png" alt="Hey, presto! DHCPv6."></p>
-<p><img src="/images/1_F5iT46roUJaBhAOV3fJNjA.png" alt="Spookyboi numbers"></p>
+<p><picture><source srcset="/images/1_DcjQ3vTDFE-k7Q_PAatOPw.250.webp 250w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.400.webp 400w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.550.webp 550w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.700.webp 700w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.850.webp 850w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.1000.webp 1000w" sizes="100vw" type="image/webp"><source srcset="/images/1_DcjQ3vTDFE-k7Q_PAatOPw.250.png 250w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.400.png 400w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.550.png 550w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.700.png 700w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.850.png 850w, /images/1_DcjQ3vTDFE-k7Q_PAatOPw.1000.png 1000w" sizes="100vw" type="image/png"><img src="/images/1_DcjQ3vTDFE-k7Q_PAatOPw.png" alt="Hey, presto! DHCPv6." height="271" width="1000" loading="lazy"></picture></p>
+<p><picture><source srcset="/images/1_F5iT46roUJaBhAOV3fJNjA.250.webp 250w, /images/1_F5iT46roUJaBhAOV3fJNjA.400.webp 400w, /images/1_F5iT46roUJaBhAOV3fJNjA.510.webp 510w" sizes="100vw" type="image/webp"><source srcset="/images/1_F5iT46roUJaBhAOV3fJNjA.250.png 250w, /images/1_F5iT46roUJaBhAOV3fJNjA.400.png 400w, /images/1_F5iT46roUJaBhAOV3fJNjA.510.png 510w" sizes="100vw" type="image/png"><img src="/images/1_F5iT46roUJaBhAOV3fJNjA.png" alt="Spookyboi numbers" height="161" width="510" loading="lazy"></picture></p>
 <hr>
 <h2 id="once-again%2C-get-your-firewall-sorted-out">Once again, get your firewall sorted out <a class="anchor-link" href="#once-again%2C-get-your-firewall-sorted-out">#</a></h2>
-<p>pfSense has a deny-by-default approach to firewall rules. Unless a rule exists to allow the traffic, it’s blocked. This is good!</p>
-<p>Unless you’ve a really good reason for allowing traffic into your network on the WAN interface, <strong>don’t</strong>. Before you get IPv6 configured, take a few seconds to verify you don’t have a cheeky “allow-all” rule on your WAN interface.</p>
+<p>pfSense has a deny-by-default approach to firewall rules. Unless a rule exists to allow the traffic, it&#x2019;s blocked. This is good!</p>
+<p>Unless you&#x2019;ve a really good reason for allowing traffic into your network on the WAN interface, <strong>don&#x2019;t</strong>. Before you get IPv6 configured, take a few seconds to verify you don&#x2019;t have a cheeky &#x201C;allow-all&#x201D; rule on your WAN interface.</p>
 <hr>
 <h2 id="glossary">Glossary <a class="anchor-link" href="#glossary">#</a></h2>
 <p>Someone pointed out that a glossary of terms would be useful. So, Guy, here ya go:</p>
@@ -267,10 +275,10 @@
       <footer class="site-footer outer">
     <div class="inner">
         <p>The views on this website are entirely my own and do not reflect those of my employer, my country, or the small alien that controls this flesh prison.</p>
-        <p>All text copyright &copy; Michael Greenhill.</p>
+        <p>All text copyright &#xA9; Michael Greenhill.</p>
     </div>
 </footer>
 
     </div>
-  </body>
-</html>
+  
+</body></html>

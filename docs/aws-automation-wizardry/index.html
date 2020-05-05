@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!DOCTYPE html><html lang="en"><head>
 
-    <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="HandheldFriendly" content="True"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="11ty"/>
-<meta name="referrer" content="no-referrer-when-downgrade"/>
-<meta name="description" content="IT and Photography"/>
+    <meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="11ty">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="description" content="IT and Photography">
 
 <title>AWS Automation Wizardry</title>
 
+<link rel="dns-prefetch" href="https://analytics.google.com/">
+<link rel="dns-prefetch" href="https://s3-ap-southeast-2.amazonaws.com/">
+
 <link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
-<link rel="stylesheet" type="text/css" href="/css/custom.css?v=b0412331e16ef09d5e48433f88886444">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=475807f7da7529efb98b3a4eedbc742c">
 <link rel="stylesheet" type="text/css" href="/css/prism-dracula.css?v=4520dcfe35ffae83c7c2e6cb6081528d">
 <link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
 
-<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=b0c30c9a1a936300c46335f7a614be73">
+<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=84188a7642d00c14fefb5c6849eda9f6">
 
 
 
@@ -33,43 +35,49 @@
       gtag('config', 'UA-97297631-1');
     </script>
 
-    <link rel="canonical" href="https://michaelgreenhill.net/aws-automation-wizardry/"/>
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+    }
+</script> 
 
-    <meta property="og:site_name" content="Michael Greenhill"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="AWS Automation Wizardry"/>
-    <meta property="og:description" content="SSM, EC2, IAM, CloudWatch, and other buzzwords."/>
-    <meta property="og:url" content="https://michaelgreenhill.net/aws-automation-wizardry/"/>
-    <meta property="og:image" content="/images/futurama_01_0105_going_robot_640x360.jpg"/>
-    <meta property="article:published_time" content="2020-04-05T10:00:00+10:00"/>
-    <meta property="article:modified_time" content="2020-04-05T10:00:00+10:00"/>
+    <link rel="canonical" href="https://michaelgreenhill.net/aws-automation-wizardry/">
+
+    <meta property="og:site_name" content="Michael Greenhill">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AWS Automation Wizardry">
+    <meta property="og:description" content="SSM, EC2, IAM, CloudWatch, and other buzzwords.">
+    <meta property="og:url" content="https://michaelgreenhill.net/aws-automation-wizardry/">
+    <meta property="og:image" content="/images/futurama_01_0105_going_robot_640x360.jpg">
+    <meta property="article:published_time" content="2020-04-05T10:00:00+10:00">
+    <meta property="article:modified_time" content="2020-04-05T10:00:00+10:00">
 
     
     
     
     
-      <meta property="article:tag" content="aws"/>
+      <meta property="article:tag" content="aws">
     
     
     
-      <meta property="article:tag" content="automation"/>
+      <meta property="article:tag" content="automation">
     
     
     
-      <meta property="article:tag" content="it"/>
+      <meta property="article:tag" content="it">
     
     
 
-    <meta property="article:publisher" content="https://facebook.com/aspect19"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="AWS Automation Wizardry"/>
-    <meta name="twitter:description" content="SSM, EC2, IAM, CloudWatch, and other buzzwords."/>
-    <meta name="twitter:url" content="https://michaelgreenhill.net/aws-automation-wizardry/"/>
-    <meta name="twitter:image" content="/images/futurama_01_0105_going_robot_640x360.jpg"/>
-    <meta name="twitter:label1" content="Written by"/>
-    <meta name="twitter:data1" content="Michael Greenhill"/>
-    <meta name="twitter:label2" content="Filed under"/>
-    <meta name="twitter:data2" content="it, ddos, nginx"/>
+    <meta property="article:publisher" content="https://facebook.com/aspect19">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AWS Automation Wizardry">
+    <meta name="twitter:description" content="SSM, EC2, IAM, CloudWatch, and other buzzwords.">
+    <meta name="twitter:url" content="https://michaelgreenhill.net/aws-automation-wizardry/">
+    <meta name="twitter:image" content="/images/futurama_01_0105_going_robot_640x360.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Michael Greenhill">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="it, ddos, nginx">
 
     <script type="application/ld+json">
       {
@@ -149,8 +157,8 @@
     <div class="site-nav-right">
         <div class="social-links">
             <a class="social-link social-link-fb" href="https://facebook.com/aspect19" title="Facebook" target="_blank" rel="noopener">
-                <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"/>
                 </svg>
             </a>
         </div>
@@ -196,7 +204,7 @@
               </div>
 
               
-              <div class="heroimage" style="background-image: url(/images/futurama_01_0105_going_robot_640x360.jpg);"><div><img src="/images/futurama_01_0105_going_robot_640x360.jpg"></div></div>
+              <div class="heroimage" style="background-image: url(/images/futurama_01_0105_going_robot_640x360.jpg);"><div><picture><source srcset="/images/futurama_01_0105_going_robot_640x360.250.webp 250w, /images/futurama_01_0105_going_robot_640x360.400.webp 400w, /images/futurama_01_0105_going_robot_640x360.550.webp 550w, /images/futurama_01_0105_going_robot_640x360.700.webp 700w, /images/futurama_01_0105_going_robot_640x360.850.webp 850w, /images/futurama_01_0105_going_robot_640x360.1000.webp 1000w, /images/futurama_01_0105_going_robot_640x360.1024.webp 1024w" sizes="100vw" type="image/webp"><source srcset="/images/futurama_01_0105_going_robot_640x360.250.jpg 250w, /images/futurama_01_0105_going_robot_640x360.400.jpg 400w, /images/futurama_01_0105_going_robot_640x360.550.jpg 550w, /images/futurama_01_0105_going_robot_640x360.700.jpg 700w, /images/futurama_01_0105_going_robot_640x360.850.jpg 850w, /images/futurama_01_0105_going_robot_640x360.1000.jpg 1000w, /images/futurama_01_0105_going_robot_640x360.1024.jpg 1024w" sizes="100vw" type="image/jpeg"><img src="/images/futurama_01_0105_going_robot_640x360.jpg" height="576" width="1024" loading="lazy"></picture></div></div>
               
 
               <div class="post-content">
@@ -211,15 +219,15 @@
 <h2 id="enter-the-automator">Enter the automator <a class="anchor-link" href="#enter-the-automator">#</a></h2>
 <p>Making use of <strong>CloudWatch Events</strong> we can trigger a <strong>Systems Manager</strong> command whenever the secret is updated.</p>
 <p>The first thing we need to do is define the <strong>event pattern</strong> in CloudWatch Events.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"detail"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"eventName"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>      <span class="token string">"PutSecretValue"</span><br>    <span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token property">"eventSource"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>      <span class="token string">"secretsmanager.amazonaws.com"</span><br>    <span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token property">"requestParameters"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">"secretId"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">"arn:aws:secretsmanager:&lt;your region>:&lt;your account id>:secret:&lt;your secret ID>"</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">"detail-type"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token string">"AWS API Call via CloudTrail"</span><br>  <span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token property">"source"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token string">"aws.secretsmanager"</span><br>  <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
-<p>The next step is to add a target. Being AWS there are dozens of options available - in this example, I’m going to use AWS Systems Manager to run a command on the EC2 instances that are affected by this updated secret.</p>
-<p><img src="/images/cloudwatch-ssm.png" alt="Look at all of the automation"></p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">&quot;detail&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">&quot;eventName&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>      <span class="token string">&quot;PutSecretValue&quot;</span><br>    <span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token property">&quot;eventSource&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>      <span class="token string">&quot;secretsmanager.amazonaws.com&quot;</span><br>    <span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token property">&quot;requestParameters&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token property">&quot;secretId&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token string">&quot;arn:aws:secretsmanager:&lt;your region&gt;:&lt;your account id&gt;:secret:&lt;your secret ID&gt;&quot;</span><br>      <span class="token punctuation">]</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token property">&quot;detail-type&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token string">&quot;AWS API Call via CloudTrail&quot;</span><br>  <span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token property">&quot;source&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token string">&quot;aws.secretsmanager&quot;</span><br>  <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+<p>The next step is to add a target. Being AWS there are dozens of options available - in this example, I&#x2019;m going to use AWS Systems Manager to run a command on the EC2 instances that are affected by this updated secret.</p>
+<p><picture><source srcset="/images/cloudwatch-ssm.250.webp 250w, /images/cloudwatch-ssm.400.webp 400w, /images/cloudwatch-ssm.550.webp 550w, /images/cloudwatch-ssm.698.webp 698w" sizes="100vw" type="image/webp"><source srcset="/images/cloudwatch-ssm.250.png 250w, /images/cloudwatch-ssm.400.png 400w, /images/cloudwatch-ssm.550.png 550w, /images/cloudwatch-ssm.698.png 698w" sizes="100vw" type="image/png"><img src="/images/cloudwatch-ssm.png" alt="Look at all of the automation" height="885" width="698" loading="lazy"></picture></p>
 <p>This requires an IAM role that CloudWatch can use, with an IAM policy that enables SSM and EC2 functionality.</p>
 <p><em>For best results shake before opening and <strong>ensure that you are adhering to the principle of least privilege</strong>.</em></p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"Version"</span><span class="token operator">:</span> <span class="token string">"2012-10-17"</span><span class="token punctuation">,</span><br>    <span class="token property">"Statement"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"ssm:ListDocuments"</span><span class="token punctuation">,</span><br>                <span class="token string">"ssm:ListDocumentsVersions"</span><span class="token punctuation">,</span><br>                <span class="token string">"ssm:DescribeDocument"</span><span class="token punctuation">,</span><br>                <span class="token string">"ssm:GetDocument"</span><span class="token punctuation">,</span><br>                <span class="token string">"ssm:DescribeInstanceInformation"</span><span class="token punctuation">,</span><br>                <span class="token string">"ssm:DescribeDocumentParameters"</span><span class="token punctuation">,</span><br>                <span class="token string">"ssm:DescribeInstanceProperties"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span><br>            <span class="token property">"Resource"</span><span class="token operator">:</span> <span class="token string">"*"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token string">"ssm:SendCommand"</span><span class="token punctuation">,</span><br>            <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span><br>            <span class="token property">"Resource"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"arn:aws:ec2:ap-southeast-2:*:instance/*"</span><span class="token punctuation">,</span><br>                <span class="token string">"arn:aws:ssm:ap-southeast-2:*:document/*"</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"ssm:CancelCommand"</span><span class="token punctuation">,</span><br>                <span class="token string">"ssm:ListCommands"</span><span class="token punctuation">,</span><br>                <span class="token string">"ssm:ListCommandInvocations"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span><br>            <span class="token property">"Resource"</span><span class="token operator">:</span> <span class="token string">"*"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token string">"ec2:DescribeInstanceStatus"</span><span class="token punctuation">,</span><br>            <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span><br>            <span class="token property">"Resource"</span><span class="token operator">:</span> <span class="token string">"*"</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token string">"ssm:StartAutomationExecution"</span><span class="token punctuation">,</span><br>            <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span><br>            <span class="token property">"Resource"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"arn:aws:ssm:::automation-definition/"</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token string">"ssm:DescribeAutomationExecutions "</span><span class="token punctuation">,</span><br>            <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span><br>            <span class="token property">"Resource"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"*"</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"ssm:StopAutomationExecution"</span><span class="token punctuation">,</span><br>                <span class="token string">"ssm:GetAutomationExecution"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span><br>            <span class="token property">"Resource"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"arn:aws:ssm:::automation-execution/"</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">&quot;Version&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2012-10-17&quot;</span><span class="token punctuation">,</span><br>    <span class="token property">&quot;Statement&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">&quot;Action&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">&quot;ssm:ListDocuments&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;ssm:ListDocumentsVersions&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;ssm:DescribeDocument&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;ssm:GetDocument&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;ssm:DescribeInstanceInformation&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;ssm:DescribeDocumentParameters&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;ssm:DescribeInstanceProperties&quot;</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Effect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Allow&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token string">&quot;*&quot;</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">&quot;Action&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ssm:SendCommand&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Effect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Allow&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">&quot;arn:aws:ec2:ap-southeast-2:*:instance/*&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;arn:aws:ssm:ap-southeast-2:*:document/*&quot;</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">&quot;Action&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">&quot;ssm:CancelCommand&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;ssm:ListCommands&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;ssm:ListCommandInvocations&quot;</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Effect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Allow&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token string">&quot;*&quot;</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">&quot;Action&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ec2:DescribeInstanceStatus&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Effect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Allow&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token string">&quot;*&quot;</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">&quot;Action&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ssm:StartAutomationExecution&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Effect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Allow&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">&quot;arn:aws:ssm:::automation-definition/&quot;</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">&quot;Action&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ssm:DescribeAutomationExecutions &quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Effect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Allow&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">&quot;*&quot;</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">&quot;Action&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">&quot;ssm:StopAutomationExecution&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;ssm:GetAutomationExecution&quot;</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Effect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Allow&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">&quot;arn:aws:ssm:::automation-execution/&quot;</span><br>            <span class="token punctuation">]</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
 <p>Of course, this assumes that you have onboarded your EC2 instances into AWS Systems Manager.</p>
 <h2 id="tl%3Bdr">TL;DR <a class="anchor-link" href="#tl%3Bdr">#</a></h2>
-<p>The upside of all of this is that whenever a specific AWS Secrets Manager secret is updated a bash command is executed on a specific group of EC2 instances (identified by a tag). I think that’s pretty cool!</p>
+<p>The upside of all of this is that whenever a specific AWS Secrets Manager secret is updated a bash command is executed on a specific group of EC2 instances (identified by a tag). I think that&#x2019;s pretty cool!</p>
 
               </div>
             </section>
@@ -232,10 +240,10 @@
       <footer class="site-footer outer">
     <div class="inner">
         <p>The views on this website are entirely my own and do not reflect those of my employer, my country, or the small alien that controls this flesh prison.</p>
-        <p>All text copyright &copy; Michael Greenhill.</p>
+        <p>All text copyright &#xA9; Michael Greenhill.</p>
     </div>
 </footer>
 
     </div>
-  </body>
-</html>
+  
+</body></html>

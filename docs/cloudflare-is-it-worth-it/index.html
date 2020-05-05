@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!DOCTYPE html><html lang="en"><head>
 
-    <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="HandheldFriendly" content="True"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="11ty"/>
-<meta name="referrer" content="no-referrer-when-downgrade"/>
-<meta name="description" content="IT and Photography"/>
+    <meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="11ty">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="description" content="IT and Photography">
 
 <title>Cloudflare - is it worth it?</title>
 
+<link rel="dns-prefetch" href="https://analytics.google.com/">
+<link rel="dns-prefetch" href="https://s3-ap-southeast-2.amazonaws.com/">
+
 <link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
-<link rel="stylesheet" type="text/css" href="/css/custom.css?v=b0412331e16ef09d5e48433f88886444">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=475807f7da7529efb98b3a4eedbc742c">
 <link rel="stylesheet" type="text/css" href="/css/prism-dracula.css?v=4520dcfe35ffae83c7c2e6cb6081528d">
 <link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
 
-<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=b0c30c9a1a936300c46335f7a614be73">
+<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=84188a7642d00c14fefb5c6849eda9f6">
 
 
 
@@ -33,43 +35,49 @@
       gtag('config', 'UA-97297631-1');
     </script>
 
-    <link rel="canonical" href="https://michaelgreenhill.net/cloudflare-is-it-worth-it/"/>
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+    }
+</script> 
 
-    <meta property="og:site_name" content="Michael Greenhill"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Cloudflare - is it worth it?"/>
-    <meta property="og:description" content="I don&#39;t have time for your slow website proxying!"/>
-    <meta property="og:url" content="https://michaelgreenhill.net/cloudflare-is-it-worth-it/"/>
-    <meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/cloudflare1250-1.png"/>
-    <meta property="article:published_time" content="2020-02-19T11:00:00+11:00"/>
-    <meta property="article:modified_time" content="2020-02-19T11:00:00+11:00"/>
+    <link rel="canonical" href="https://michaelgreenhill.net/cloudflare-is-it-worth-it/">
+
+    <meta property="og:site_name" content="Michael Greenhill">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Cloudflare - is it worth it?">
+    <meta property="og:description" content="I don&apos;t have time for your slow website proxying!">
+    <meta property="og:url" content="https://michaelgreenhill.net/cloudflare-is-it-worth-it/">
+    <meta property="og:image" content="/images/cloudflare1250-1.png">
+    <meta property="article:published_time" content="2020-02-19T11:00:00+11:00">
+    <meta property="article:modified_time" content="2020-02-19T11:00:00+11:00">
 
     
     
     
     
-      <meta property="article:tag" content="cloudflare"/>
+      <meta property="article:tag" content="cloudflare">
     
     
     
-      <meta property="article:tag" content="nginx"/>
+      <meta property="article:tag" content="nginx">
     
     
     
-      <meta property="article:tag" content="it"/>
+      <meta property="article:tag" content="it">
     
     
 
-    <meta property="article:publisher" content="https://facebook.com/aspect19"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Cloudflare - is it worth it?"/>
-    <meta name="twitter:description" content="I don&#39;t have time for your slow website proxying!"/>
-    <meta name="twitter:url" content="https://michaelgreenhill.net/cloudflare-is-it-worth-it/"/>
-    <meta name="twitter:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/cloudflare1250-1.png"/>
-    <meta name="twitter:label1" content="Written by"/>
-    <meta name="twitter:data1" content="Michael Greenhill"/>
-    <meta name="twitter:label2" content="Filed under"/>
-    <meta name="twitter:data2" content="it, ddos, nginx"/>
+    <meta property="article:publisher" content="https://facebook.com/aspect19">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cloudflare - is it worth it?">
+    <meta name="twitter:description" content="I don&apos;t have time for your slow website proxying!">
+    <meta name="twitter:url" content="https://michaelgreenhill.net/cloudflare-is-it-worth-it/">
+    <meta name="twitter:image" content="/images/cloudflare1250-1.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Michael Greenhill">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="it, ddos, nginx">
 
     <script type="application/ld+json">
       {
@@ -103,7 +111,7 @@
         "dateModified": "2020-02-19T11:00:00+11:00",
         "image": {
           "@type": "ImageObject",
-          "url": "https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/cloudflare1250-1.png"
+          "url": "/images/cloudflare1250-1.png"
         },
         "keywords": "post,cloudflare,nginx,it",
         "description": "I don&#39;t have time for your slow website proxying!",
@@ -149,8 +157,8 @@
     <div class="site-nav-right">
         <div class="social-links">
             <a class="social-link social-link-fb" href="https://facebook.com/aspect19" title="Facebook" target="_blank" rel="noopener">
-                <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"/>
                 </svg>
             </a>
         </div>
@@ -196,41 +204,41 @@
               </div>
 
               
-              <div class="heroimage" style="background-image: url(https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/cloudflare1250-1.png);"><div><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/cloudflare1250-1.png"></div></div>
+              <div class="heroimage" style="background-image: url(/images/cloudflare1250-1.png);"><div><picture><source srcset="/images/cloudflare1250-1.250.webp 250w, /images/cloudflare1250-1.400.webp 400w, /images/cloudflare1250-1.550.webp 550w, /images/cloudflare1250-1.700.webp 700w, /images/cloudflare1250-1.850.webp 850w, /images/cloudflare1250-1.1000.webp 1000w, /images/cloudflare1250-1.1150.webp 1150w, /images/cloudflare1250-1.1250.webp 1250w" sizes="100vw" type="image/webp"><source srcset="/images/cloudflare1250-1.250.png 250w, /images/cloudflare1250-1.400.png 400w, /images/cloudflare1250-1.550.png 550w, /images/cloudflare1250-1.700.png 700w, /images/cloudflare1250-1.850.png 850w, /images/cloudflare1250-1.1000.png 1000w, /images/cloudflare1250-1.1150.png 1150w, /images/cloudflare1250-1.1250.png 1250w" sizes="100vw" type="image/png"><img src="/images/cloudflare1250-1.png" height="500" width="1250" loading="lazy"></picture></div></div>
               
 
               <div class="post-content">
-                <p class="subtitle">I don&#39;t have time for your slow website proxying!</p>
+                <p class="subtitle">I don&apos;t have time for your slow website proxying!</p>
                 
                 <aside class="post-aside">
                   <strong>Contents</strong>
                   <nav class="toc"><ol><li><a href="#slower-than-a-wet-week">Slower than a wet week</a></li><li><a href="#consciously-uncoupling-from-cloudflare">Consciously uncoupling from Cloudflare</a></li><li><a href="#but%2C-cloudflare-caches-my-website!">But, Cloudflare caches my website!</a></li></ol></nav>
                 </aside>
                 <p>So this website is still in its infancy. Less than a week old, in fact.</p>
-<p>During my setup process (which I’ll detail in a forthcoming article…) I made the decision wrap my site in the warm embrace of Cloudflare - a magical service full of the hopes, dreams, and promises of a secured and snappier website.</p>
-<p>I dunno about security, but the snappier side of things left a lot to be desired…</p>
+<p>During my setup process (which I&#x2019;ll detail in a forthcoming article&#x2026;) I made the decision wrap my site in the warm embrace of Cloudflare - a magical service full of the hopes, dreams, and promises of a secured and snappier website.</p>
+<p>I dunno about security, but the snappier side of things left a lot to be desired&#x2026;</p>
 <h2 id="slower-than-a-wet-week">Slower than a wet week <a class="anchor-link" href="#slower-than-a-wet-week">#</a></h2>
-<p>So goes one of my dad’s favourite catch phrases.</p>
-<p>We’re talking about a 600ms page load penalty. Considering that the native (i.e., nginx &gt; Ghost) application renders pages in the browser within 70ms, and nginx caching brings that down to 50ms (barely more than the network RTT!), it’s just abysmal.</p>
+<p>So goes one of my dad&#x2019;s favourite catch phrases.</p>
+<p>We&#x2019;re talking about a 600ms page load penalty. Considering that the native (i.e., nginx &gt; Ghost) application renders pages in the browser within 70ms, and nginx caching brings that down to 50ms (barely more than the network RTT!), it&#x2019;s just abysmal.</p>
 <p>For the visually-inclined:</p>
-<p><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/michaelgreenhill.net-direct-nocaching-1.png" alt="Direct to nginx"></p>
-<p>…versus…</p>
+<p><picture><source srcset="/images/michaelgreenhill.net-direct-nocaching-1.250.webp 250w, /images/michaelgreenhill.net-direct-nocaching-1.400.webp 400w, /images/michaelgreenhill.net-direct-nocaching-1.550.webp 550w, /images/michaelgreenhill.net-direct-nocaching-1.700.webp 700w, /images/michaelgreenhill.net-direct-nocaching-1.850.webp 850w, /images/michaelgreenhill.net-direct-nocaching-1.1000.webp 1000w, /images/michaelgreenhill.net-direct-nocaching-1.1150.webp 1150w, /images/michaelgreenhill.net-direct-nocaching-1.1183.webp 1183w" sizes="100vw" type="image/webp"><source srcset="/images/michaelgreenhill.net-direct-nocaching-1.250.png 250w, /images/michaelgreenhill.net-direct-nocaching-1.400.png 400w, /images/michaelgreenhill.net-direct-nocaching-1.550.png 550w, /images/michaelgreenhill.net-direct-nocaching-1.700.png 700w, /images/michaelgreenhill.net-direct-nocaching-1.850.png 850w, /images/michaelgreenhill.net-direct-nocaching-1.1000.png 1000w, /images/michaelgreenhill.net-direct-nocaching-1.1150.png 1150w, /images/michaelgreenhill.net-direct-nocaching-1.1183.png 1183w" sizes="100vw" type="image/png"><img src="/images/michaelgreenhill.net-direct-nocaching-1.png" alt="Direct to nginx" height="498" width="1183" loading="lazy"></picture></p>
+<p>&#x2026;versus&#x2026;</p>
 <p><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/michaelgreenhill.net-cloudflare-1.png" alt="Suffering in agony with Cloudflare"></p>
 <p><img src="https://media3.giphy.com/media/QIQTfximd3AuQ/giphy.webp" alt="SLOOWWW"></p>
 <h2 id="consciously-uncoupling-from-cloudflare">Consciously uncoupling from Cloudflare <a class="anchor-link" href="#consciously-uncoupling-from-cloudflare">#</a></h2>
-<p>The most important step, of course, is to disable the proxy status of your Cloudflare DNS records. There’s all sorts of privacy considerations with this, but if you’re a smart cookie and are hosting your services externally (i.e., on AWS like this handsome website), then chances are you also don’t subscribe to the security-through-obscurity model that Cloudflare offers.</p>
+<p>The most important step, of course, is to disable the proxy status of your Cloudflare DNS records. There&#x2019;s all sorts of privacy considerations with this, but if you&#x2019;re a smart cookie and are hosting your services externally (i.e., on AWS like this handsome website), then chances are you also don&#x2019;t subscribe to the security-through-obscurity model that Cloudflare offers.</p>
 <p><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/image-8.png" alt="Click the orange cloud to Make Websites Great Again"></p>
-<p>Next, you’ll need to ensure your servers are appropriately hardened against security threats. <strong>Since this is something you should be doing regardless</strong>, I won’t go it any further.</p>
+<p>Next, you&#x2019;ll need to ensure your servers are appropriately hardened against security threats. <strong>Since this is something you should be doing regardless</strong>, I won&#x2019;t go it any further.</p>
 <p>You have hardened your servers, right?</p>
 <p><img src="https://media3.giphy.com/media/VfzJD0dNOXdOX9UsV6/giphy.webp" alt="Totally..."></p>
 <h2 id="but%2C-cloudflare-caches-my-website!">But, Cloudflare caches my website! <a class="anchor-link" href="#but%2C-cloudflare-caches-my-website!">#</a></h2>
-<p>And this is a good thing! If your site is anything other than static HTML there’s great value in caching it and minimising a lot of the CPU time - especially if you’re on AWS and want to use those juicy CPU credits.</p>
-<p><strong>But nginx can do this for you!</strong> (and yeah, so can Apache, if you like living in the 90’s)</p>
-<p>This is a concept called <strong>microcaching</strong>. There’s a volume of information out there on the benefits microcaching, so instead of delving too deeply I suggest you start with the official nginx blog: <a href="https://www.nginx.com/blog/benefits-of-microcaching-nginx/">https://www.nginx.com/blog/benefits-of-microcaching-nginx/</a></p>
+<p>And this is a good thing! If your site is anything other than static HTML there&#x2019;s great value in caching it and minimising a lot of the CPU time - especially if you&#x2019;re on AWS and want to use those juicy CPU credits.</p>
+<p><strong>But nginx can do this for you!</strong> (and yeah, so can Apache, if you like living in the 90&#x2019;s)</p>
+<p>This is a concept called <strong>microcaching</strong>. There&#x2019;s a volume of information out there on the benefits microcaching, so instead of delving too deeply I suggest you start with the official nginx blog: <a href="https://www.nginx.com/blog/benefits-of-microcaching-nginx/">https://www.nginx.com/blog/benefits-of-microcaching-nginx/</a></p>
 <p>Using the live example from this site:</p>
-<pre class="language-nginx"><code class="language-nginx"><span class="token keyword">proxy_cache_path</span> <span class="token operator">/</span>opt<span class="token operator">/</span>cache<span class="token operator">/</span>ghost_secure levels<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span> keys_zone<span class="token operator">=</span>ghost_secure<span class="token punctuation">:</span><span class="token number">10</span>m max_size<span class="token operator">=</span><span class="token number">1</span>g inactive<span class="token operator">=</span><span class="token number">60</span>m use_temp_path<span class="token operator">=</span>off<span class="token punctuation">;</span><br><span class="token keyword">proxy_cache_key</span> <span class="token string">"$scheme$request_method$host$request_uri"</span><span class="token punctuation">;</span><br><span class="token keyword">proxy_cache_methods</span> GET HEAD<span class="token punctuation">;</span><br><br><span class="token comment"># ...</span><br><br><span class="token keyword">location</span> <span class="token punctuation">{</span><br>    proxy_cache_revalidate        on<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_use_stale</span>         updating<span class="token punctuation">;</span><br>    proxy_cache_background_update on<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_lock</span>              on<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache</span>                   ghost_secure<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_valid</span>             any <span class="token number">10</span>m<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_ignore_headers</span>          Cache<span class="token operator">-</span>Control<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_use_stale</span>         error <span class="token keyword">timeout</span> http_500 http_502 http_503 http_504<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_bypass</span>            <span class="token variable">$http_upgrade</span><span class="token punctuation">;</span><br><br>    <span class="token comment"># ... all you other config directives go here...</span><br><br>    <span class="token comment"># example proxy_pass configuraton for your backend config</span><br>    <span class="token keyword">proxy_set_header</span> X<span class="token operator">-</span>Forwarded<span class="token operator">-</span>For <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_set_header</span> X<span class="token operator">-</span>Forwarded<span class="token operator">-</span>Proto <span class="token variable">$scheme</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_set_header</span> X<span class="token operator">-</span>Real<span class="token operator">-</span>IP <span class="token variable">$remote_addr</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_set_header</span> Host <span class="token variable">$http_host</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_pass</span> <span class="token keyword">http</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token punctuation">:</span><span class="token number">2369</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
-<p>Of course, if you’re using fastcgi for a PHP application (for example), you can use the fastcgi caching instead.</p>
-<p>As far as a small blog like this goes there’s little benefit in microcaching: with it disabled, Ghost still renders pages in tidy fashion. But if I was to get the Reddit hug of death, microcaching would save not only my site, but also my wallet.</p>
+<pre class="language-nginx"><code class="language-nginx"><span class="token keyword">proxy_cache_path</span> <span class="token operator">/</span>opt<span class="token operator">/</span>cache<span class="token operator">/</span>ghost_secure levels<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span> keys_zone<span class="token operator">=</span>ghost_secure<span class="token punctuation">:</span><span class="token number">10</span>m max_size<span class="token operator">=</span><span class="token number">1</span>g inactive<span class="token operator">=</span><span class="token number">60</span>m use_temp_path<span class="token operator">=</span>off<span class="token punctuation">;</span><br><span class="token keyword">proxy_cache_key</span> <span class="token string">&quot;$scheme$request_method$host$request_uri&quot;</span><span class="token punctuation">;</span><br><span class="token keyword">proxy_cache_methods</span> GET HEAD<span class="token punctuation">;</span><br><br><span class="token comment"># ...</span><br><br><span class="token keyword">location</span> <span class="token punctuation">{</span><br>    proxy_cache_revalidate        on<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_use_stale</span>         updating<span class="token punctuation">;</span><br>    proxy_cache_background_update on<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_lock</span>              on<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache</span>                   ghost_secure<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_valid</span>             any <span class="token number">10</span>m<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_ignore_headers</span>          Cache<span class="token operator">-</span>Control<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_use_stale</span>         error <span class="token keyword">timeout</span> http_500 http_502 http_503 http_504<span class="token punctuation">;</span><br>    <span class="token keyword">proxy_cache_bypass</span>            <span class="token variable">$http_upgrade</span><span class="token punctuation">;</span><br><br>    <span class="token comment"># ... all you other config directives go here...</span><br><br>    <span class="token comment"># example proxy_pass configuraton for your backend config</span><br>    <span class="token keyword">proxy_set_header</span> X<span class="token operator">-</span>Forwarded<span class="token operator">-</span>For <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_set_header</span> X<span class="token operator">-</span>Forwarded<span class="token operator">-</span>Proto <span class="token variable">$scheme</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_set_header</span> X<span class="token operator">-</span>Real<span class="token operator">-</span>IP <span class="token variable">$remote_addr</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_set_header</span> Host <span class="token variable">$http_host</span><span class="token punctuation">;</span><br>    <span class="token keyword">proxy_pass</span> <span class="token keyword">http</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token punctuation">:</span><span class="token number">2369</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Of course, if you&#x2019;re using fastcgi for a PHP application (for example), you can use the fastcgi caching instead.</p>
+<p>As far as a small blog like this goes there&#x2019;s little benefit in microcaching: with it disabled, Ghost still renders pages in tidy fashion. But if I was to get the Reddit hug of death, microcaching would save not only my site, but also my wallet.</p>
 
               </div>
             </section>
@@ -243,10 +251,10 @@
       <footer class="site-footer outer">
     <div class="inner">
         <p>The views on this website are entirely my own and do not reflect those of my employer, my country, or the small alien that controls this flesh prison.</p>
-        <p>All text copyright &copy; Michael Greenhill.</p>
+        <p>All text copyright &#xA9; Michael Greenhill.</p>
     </div>
 </footer>
 
     </div>
-  </body>
-</html>
+  
+</body></html>

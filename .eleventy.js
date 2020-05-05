@@ -8,6 +8,8 @@ const readingTime = require('eleventy-plugin-reading-time');
 const pluginSEO = require("eleventy-plugin-seo");
 const pluginTOC = require('eleventy-plugin-toc');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginLocalRespimg = require('eleventy-plugin-local-respimg');
+const pluginPWA = require("eleventy-plugin-pwa");
 
 
 module.exports = function (eleventyConfig) {
@@ -18,11 +20,58 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginSEO, require("./_data/seo.json"));
   eleventyConfig.addPlugin(pluginTOC);
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(pluginPWA);
+
+  eleventyConfig.addPlugin(pluginLocalRespimg, {
+    folders: {
+      source: '.', // Folder images are stored in
+      output: 'docs', // Folder images should be output to
+    },
+    images: {
+      resize: {
+        min: 250, // Minimum width to resize an image to
+        max: 1500, // Maximum width to resize an image to
+        step: 150, // Width difference between each resized image
+      },
+      gifToVideo: false, // Convert GIFs to MP4 videos
+      sizes: '100vw', // Default image `sizes` attribute
+      lazy: true, // Include `loading="lazy"` attribute for images
+      additional: [
+        // Globs of additional images to optimize (won't be resied)
+        'images/icons/**/*',
+      ],
+      watch: {
+        src: 'images/*', // Glob of images that Eleventy should watch for changes to
+      },
+      pngquant: {
+        speed: 4,
+        strip: true
+      }, // imagemin-pngquant options
+      mozjpeg: {
+        quality: 90,
+        progressive: true
+      }, // imagemin-mozjpeg options
+      svgo: {
+        /* ... */
+      }, // imagemin-svgo options
+      gifresize: {
+        /* ... */
+      }, // @gumlet/gif-resize options
+      webp: {
+        /* ... */
+      }, // imagemin-webp options
+      gifwebp: {
+        /* ... */
+      }, // imagemin-gif2webp options
+    },
+  });
+
   eleventyConfig.setUseGitIgnore(false);
   
   const cacheBusterOptions = {
     "outputDirectory": "./docs"
   };
+
   eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
@@ -54,11 +103,13 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  /*
   eleventyConfig.addPassthroughCopy('images', function () {
     return {
       passthroughFileCopy: true
     }
   });
+  */
 
   /* Markdown */
   let markdownIt = require('markdown-it')

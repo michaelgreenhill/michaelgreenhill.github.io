@@ -3,6 +3,7 @@
   <head>
 
     <meta charset="utf-8"/>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="HandheldFriendly" content="True"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -12,12 +13,15 @@
 
 <title>Tagged containers</title>
 
+<link rel="dns-prefetch" href="https://analytics.google.com/" >
+<link rel="dns-prefetch" href="https://s3-ap-southeast-2.amazonaws.com/" >
+
 <link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
-<link rel="stylesheet" type="text/css" href="/css/custom.css?v=b0412331e16ef09d5e48433f88886444">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=475807f7da7529efb98b3a4eedbc742c">
 <link rel="stylesheet" type="text/css" href="/css/prism-dracula.css?v=4520dcfe35ffae83c7c2e6cb6081528d">
 <link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
 
-<link rel="alternate" type="application/atom+xml" title="" href="/feed.xml?v=b0c30c9a1a936300c46335f7a614be73">
+<link rel="alternate" type="application/atom+xml" title="" href="/feed.xml?v=84188a7642d00c14fefb5c6849eda9f6">
 
 
 
@@ -32,6 +36,12 @@
 
       gtag('config', 'UA-97297631-1');
     </script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+    }
+</script> 
 
     <link rel="canonical" href="https://michaelgreenhill.net/tagged-tag/"/>
 

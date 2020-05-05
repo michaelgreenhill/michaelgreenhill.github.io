@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!DOCTYPE html><html lang="en"><head>
 
-    <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="HandheldFriendly" content="True"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="11ty"/>
-<meta name="referrer" content="no-referrer-when-downgrade"/>
-<meta name="description" content="IT and Photography"/>
+    <meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="11ty">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="description" content="IT and Photography">
 
 <title>Using AWS Secrets Manager for .env files</title>
 
+<link rel="dns-prefetch" href="https://analytics.google.com/">
+<link rel="dns-prefetch" href="https://s3-ap-southeast-2.amazonaws.com/">
+
 <link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
-<link rel="stylesheet" type="text/css" href="/css/custom.css?v=b0412331e16ef09d5e48433f88886444">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=475807f7da7529efb98b3a4eedbc742c">
 <link rel="stylesheet" type="text/css" href="/css/prism-dracula.css?v=4520dcfe35ffae83c7c2e6cb6081528d">
 <link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
 
-<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=b0c30c9a1a936300c46335f7a614be73">
+<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=84188a7642d00c14fefb5c6849eda9f6">
 
 
 
@@ -33,39 +35,45 @@
       gtag('config', 'UA-97297631-1');
     </script>
 
-    <link rel="canonical" href="https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/"/>
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+    }
+</script> 
 
-    <meta property="og:site_name" content="Michael Greenhill"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Using AWS Secrets Manager for .env files"/>
-    <meta property="og:description" content="Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!"/>
-    <meta property="og:url" content="https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/"/>
-    <meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg"/>
-    <meta property="article:published_time" content="2020-02-17T11:00:00+11:00"/>
-    <meta property="article:modified_time" content="2020-02-17T11:00:00+11:00"/>
+    <link rel="canonical" href="https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/">
+
+    <meta property="og:site_name" content="Michael Greenhill">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Using AWS Secrets Manager for .env files">
+    <meta property="og:description" content="Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!">
+    <meta property="og:url" content="https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/">
+    <meta property="og:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg">
+    <meta property="article:published_time" content="2020-02-17T11:00:00+11:00">
+    <meta property="article:modified_time" content="2020-02-17T11:00:00+11:00">
 
     
     
     
     
-      <meta property="article:tag" content="aws"/>
+      <meta property="article:tag" content="aws">
     
     
     
-      <meta property="article:tag" content="it"/>
+      <meta property="article:tag" content="it">
     
     
 
-    <meta property="article:publisher" content="https://facebook.com/aspect19"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Using AWS Secrets Manager for .env files"/>
-    <meta name="twitter:description" content="Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!"/>
-    <meta name="twitter:url" content="https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/"/>
-    <meta name="twitter:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg"/>
-    <meta name="twitter:label1" content="Written by"/>
-    <meta name="twitter:data1" content="Michael Greenhill"/>
-    <meta name="twitter:label2" content="Filed under"/>
-    <meta name="twitter:data2" content="it, ddos, nginx"/>
+    <meta property="article:publisher" content="https://facebook.com/aspect19">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Using AWS Secrets Manager for .env files">
+    <meta name="twitter:description" content="Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!">
+    <meta name="twitter:url" content="https://michaelgreenhill.net/using-aws-secrets-manager-for-.env-files/">
+    <meta name="twitter:image" content="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Michael Greenhill">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="it, ddos, nginx">
 
     <script type="application/ld+json">
       {
@@ -145,8 +153,8 @@
     <div class="site-nav-right">
         <div class="social-links">
             <a class="social-link social-link-fb" href="https://facebook.com/aspect19" title="Facebook" target="_blank" rel="noopener">
-                <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"/>
                 </svg>
             </a>
         </div>
@@ -201,15 +209,15 @@
 <p>One option is to use AWS Secrets Manager. This tool securely stores your secrets (for the princely sum of $0.40 per secret per month) - well, as securely as your IAM policies dictate.</p>
 <h2 id="what-exactly-is-a-secret%3F">What exactly is a secret? <a class="anchor-link" href="#what-exactly-is-a-secret%3F">#</a></h2>
 <p>In terms of pricing, the AWS pricing model lists $0.40 per secret per month. A secret can contain multiple key=value pairs, up to a total size of 10kb per secret.</p>
-<p>With that in mind, it’s trivial to create a key=value stack in Secrets Manager.</p>
+<p>With that in mind, it&#x2019;s trivial to create a key=value stack in Secrets Manager.</p>
 <p><img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/image-7.png" alt="Example AWS Secret"></p>
 <h2 id="accessing-the-secrets-from-ec2">Accessing the secrets from EC2 <a class="anchor-link" href="#accessing-the-secrets-from-ec2">#</a></h2>
-<p>Assuming you’ve been following the AWS best practices and have assigned a role to your EC2 instances, it’s just a matter of creating an IAM policy that grants access to the secret, and attaching it to your EC2 role.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">"Version"</span><span class="token operator">:</span> <span class="token string">"2012-10-17"</span><span class="token punctuation">,</span><br>    <span class="token property">"Statement"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span><br>            <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">"secretsmanager:GetResourcePolicy"</span><span class="token punctuation">,</span><br>                <span class="token string">"secretsmanager:GetSecretValue"</span><span class="token punctuation">,</span><br>                <span class="token string">"secretsmanager:DescribeSecret"</span><span class="token punctuation">,</span><br>                <span class="token string">"secretsmanager:ListSecretVersionIds"</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">"Resource"</span><span class="token operator">:</span> <span class="token string">"&lt;ARN of your fancy new secret>"</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
+<p>Assuming you&#x2019;ve been following the AWS best practices and have assigned a role to your EC2 instances, it&#x2019;s just a matter of creating an IAM policy that grants access to the secret, and attaching it to your EC2 role.</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>    <span class="token property">&quot;Version&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2012-10-17&quot;</span><span class="token punctuation">,</span><br>    <span class="token property">&quot;Statement&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>        <span class="token punctuation">{</span><br>            <span class="token property">&quot;Effect&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Allow&quot;</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Action&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>                <span class="token string">&quot;secretsmanager:GetResourcePolicy&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;secretsmanager:GetSecretValue&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;secretsmanager:DescribeSecret&quot;</span><span class="token punctuation">,</span><br>                <span class="token string">&quot;secretsmanager:ListSecretVersionIds&quot;</span><br>            <span class="token punctuation">]</span><span class="token punctuation">,</span><br>            <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&lt;ARN of your fancy new secret&gt;&quot;</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">]</span><br><span class="token punctuation">}</span></code></pre>
 <p>This policy grants read-only access to your secret (because your EC2 instance should not be able to manipulate the secret!)</p>
-<p>The final step is to extract the secret and dump it to a .env file in KEY=“value” format.</p>
-<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span><br><br><span class="token assign-left variable">AWS_SECRET_ID</span><span class="token operator">=</span><span class="token string">"my-super-secret-secret"</span><br><span class="token assign-left variable">AWS_REGION</span><span class="token operator">=</span><span class="token string">"ap-southeast-2"</span><br><span class="token assign-left variable">ENVFILE</span><span class="token operator">=</span><span class="token string">"/srv/app/.env"</span><br><br><span class="token comment"># Ensure your EC2 instance has the most recent version of the AWS CLI</span><br><span class="token function">apt-get</span> <span class="token function">install</span> -y python3-pip jq<br>pip3 <span class="token function">install</span> awscli --upgrade<br><br><span class="token comment"># Export the secret to .env</span><br>aws secretsmanager get-secret-value --secret-id <span class="token variable">$AWS_SECRET_ID</span> --region <span class="token variable">$AWS_REGION</span> <span class="token operator">|</span> <span class="token punctuation">\</span><br>  jq -r <span class="token string">'.SecretString'</span> <span class="token operator">|</span> <span class="token punctuation">\</span><br>  jq -r <span class="token string">"to_entries|map(<span class="token entity" title="\&quot;">\"</span>\(.key)=<span class="token entity" title="\\">\\</span><span class="token entity" title="\&quot;">\"</span>\(.value|tostring)<span class="token entity" title="\\">\\</span><span class="token entity" title="\&quot;">\"</span><span class="token entity" title="\&quot;">\"</span>)|.[]"</span> <span class="token operator">></span> <span class="token variable">$ENVFILE</span></code></pre>
-<p>And that’s pretty much it!</p>
+<p>The final step is to extract the secret and dump it to a .env file in KEY=&#x201C;value&#x201D; format.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span><br><br><span class="token assign-left variable">AWS_SECRET_ID</span><span class="token operator">=</span><span class="token string">&quot;my-super-secret-secret&quot;</span><br><span class="token assign-left variable">AWS_REGION</span><span class="token operator">=</span><span class="token string">&quot;ap-southeast-2&quot;</span><br><span class="token assign-left variable">ENVFILE</span><span class="token operator">=</span><span class="token string">&quot;/srv/app/.env&quot;</span><br><br><span class="token comment"># Ensure your EC2 instance has the most recent version of the AWS CLI</span><br><span class="token function">apt-get</span> <span class="token function">install</span> -y python3-pip jq<br>pip3 <span class="token function">install</span> awscli --upgrade<br><br><span class="token comment"># Export the secret to .env</span><br>aws secretsmanager get-secret-value --secret-id <span class="token variable">$AWS_SECRET_ID</span> --region <span class="token variable">$AWS_REGION</span> <span class="token operator">|</span> <span class="token punctuation">\</span><br>  jq -r <span class="token string">&apos;.SecretString&apos;</span> <span class="token operator">|</span> <span class="token punctuation">\</span><br>  jq -r <span class="token string">&quot;to_entries|map(<span class="token entity" title="\&quot;">\&quot;</span>\(.key)=<span class="token entity" title="\\">\\</span><span class="token entity" title="\&quot;">\&quot;</span>\(.value|tostring)<span class="token entity" title="\\">\\</span><span class="token entity" title="\&quot;">\&quot;</span><span class="token entity" title="\&quot;">\&quot;</span>)|.[]&quot;</span> <span class="token operator">&gt;</span> <span class="token variable">$ENVFILE</span></code></pre>
+<p>And that&#x2019;s pretty much it!</p>
 
               </div>
             </section>
@@ -222,10 +230,10 @@
       <footer class="site-footer outer">
     <div class="inner">
         <p>The views on this website are entirely my own and do not reflect those of my employer, my country, or the small alien that controls this flesh prison.</p>
-        <p>All text copyright &copy; Michael Greenhill.</p>
+        <p>All text copyright &#xA9; Michael Greenhill.</p>
     </div>
 </footer>
 
     </div>
-  </body>
-</html>
+  
+</body></html>

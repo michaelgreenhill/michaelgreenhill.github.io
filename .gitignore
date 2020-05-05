@@ -4,6 +4,7 @@ deploy/*
 node_modules
 node_modules/*
 docs/node_modules/*
+docs/images/*
 package-lock.json
 .vscode/*
 secrets

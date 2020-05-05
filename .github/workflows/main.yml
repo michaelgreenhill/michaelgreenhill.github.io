@@ -9,6 +9,7 @@ jobs:
           ref: refs/heads/master
       - name: install
         run: |
+          sudo apt-get -y install autoconf pkg-config build-essential libglu1 libxi6 libgconf-2-4
           npm install
       - name: build
         run: |

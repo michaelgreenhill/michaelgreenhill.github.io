@@ -15,15 +15,15 @@ author:
   photo: "https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/download.png"
 ---
 
-In one of my [previous posts](/using-aws-secrets-manager-for-.env-files/) I demonstrated the use of AWS Secrets Manager for securely keeping and maintaining the state of a Laravel application .env file. 
+In one of my [previous posts](/using-aws-secrets-manager-for-.env-files/) I demonstrated the use of AWS Secrets Manager for securely keeping and maintaining the state of a Laravel application .env file.
 
 Storing it is one thing - but how do you inform the Laravel application of the updated .env file when the secret changes? SSH-ing into each ephemeral EC2 instance is a nightmare: there *has* to be a better way.
 
 ## Enter the automator
 
-Making use of **CloudWatch Events** we can trigger a **Systems Manager** command whenever the secret is updated. 
+Making use of **CloudWatch Events** we can trigger a **Systems Manager** command whenever the secret is updated.
 
-The first thing we need to do is define the **event pattern** in CloudWatch Events. 
+The first thing we need to do is define the **event pattern** in CloudWatch Events.
 
 ``` json
 {
@@ -49,11 +49,11 @@ The first thing we need to do is define the **event pattern** in CloudWatch Even
 }
 ```
 
-The next step is to add a target. Being AWS there are dozens of options available - in this example, I'm going to use AWS Systems Manager to run a command on the EC2 instances that are affected by this updated secret. 
+The next step is to add a target. Being AWS there are dozens of options available - in this example, I'm going to use AWS Systems Manager to run a command on the EC2 instances that are affected by this updated secret.
 
 ![Look at all of the automation](/images/cloudwatch-ssm.png)
 
-This requires an IAM role that CloudWatch can use, with an IAM policy that enables SSM and EC2 functionality. 
+This requires an IAM role that CloudWatch can use, with an IAM policy that enables SSM and EC2 functionality.
 
 *For best results shake before opening and **ensure that you are adhering to the principle of least privilege**.*
 
@@ -124,7 +124,7 @@ This requires an IAM role that CloudWatch can use, with an IAM policy that enabl
 }
 ```
 
-Of course, this assumes that you have onboarded your EC2 instances into AWS Systems Manager. 
+Of course, this assumes that you have onboarded your EC2 instances into AWS Systems Manager.
 
 ## TL;DR
 

@@ -1,23 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!DOCTYPE html><html lang="en"><head>
 
-    <meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="HandheldFriendly" content="True"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="11ty"/>
-<meta name="referrer" content="no-referrer-when-downgrade"/>
-<meta name="description" content="IT and Photography"/>
+    <meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="11ty">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="description" content="IT and Photography">
 
 <title>Dealing with silent failures</title>
 
+<link rel="dns-prefetch" href="https://analytics.google.com/">
+<link rel="dns-prefetch" href="https://s3-ap-southeast-2.amazonaws.com/">
+
 <link rel="stylesheet" type="text/css" href="/css/screen.css?v=ea37315572b4688ec79439d24377c5a1">
-<link rel="stylesheet" type="text/css" href="/css/custom.css?v=b0412331e16ef09d5e48433f88886444">
+<link rel="stylesheet" type="text/css" href="/css/custom.css?v=475807f7da7529efb98b3a4eedbc742c">
 <link rel="stylesheet" type="text/css" href="/css/prism-dracula.css?v=4520dcfe35ffae83c7c2e6cb6081528d">
 <link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
 
-<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=b0c30c9a1a936300c46335f7a614be73">
+<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=84188a7642d00c14fefb5c6849eda9f6">
 
 
 
@@ -33,47 +35,53 @@
       gtag('config', 'UA-97297631-1');
     </script>
 
-    <link rel="canonical" href="https://michaelgreenhill.net/dealing-with-silent-failures/"/>
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+    }
+</script> 
 
-    <meta property="og:site_name" content="Michael Greenhill"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Dealing with silent failures"/>
-    <meta property="og:description" content="Your code isn&#39;t as good as you think it is, and that&#39;s OK."/>
-    <meta property="og:url" content="https://michaelgreenhill.net/dealing-with-silent-failures/"/>
-    <meta property="og:image" content="/images/failing2fail.png"/>
-    <meta property="article:published_time" content="2020-05-05T10:00:00+10:00"/>
-    <meta property="article:modified_time" content="2020-05-05T10:00:00+10:00"/>
+    <link rel="canonical" href="https://michaelgreenhill.net/dealing-with-silent-failures/">
+
+    <meta property="og:site_name" content="Michael Greenhill">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Dealing with silent failures">
+    <meta property="og:description" content="Your code isn&apos;t as good as you think it is, and that&apos;s OK.">
+    <meta property="og:url" content="https://michaelgreenhill.net/dealing-with-silent-failures/">
+    <meta property="og:image" content="/images/failing2fail.png">
+    <meta property="article:published_time" content="2020-05-05T10:00:00+10:00">
+    <meta property="article:modified_time" content="2020-05-05T10:00:00+10:00">
 
     
     
     
     
-      <meta property="article:tag" content="it"/>
+      <meta property="article:tag" content="it">
     
     
     
-      <meta property="article:tag" content="automation"/>
+      <meta property="article:tag" content="automation">
     
     
     
-      <meta property="article:tag" content="observability"/>
+      <meta property="article:tag" content="observability">
     
     
     
-      <meta property="article:tag" content="alerting"/>
+      <meta property="article:tag" content="alerting">
     
     
 
-    <meta property="article:publisher" content="https://facebook.com/aspect19"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Dealing with silent failures"/>
-    <meta name="twitter:description" content="Your code isn&#39;t as good as you think it is, and that&#39;s OK."/>
-    <meta name="twitter:url" content="https://michaelgreenhill.net/dealing-with-silent-failures/"/>
-    <meta name="twitter:image" content="/images/failing2fail.png"/>
-    <meta name="twitter:label1" content="Written by"/>
-    <meta name="twitter:data1" content="Michael Greenhill"/>
-    <meta name="twitter:label2" content="Filed under"/>
-    <meta name="twitter:data2" content="it, ddos, nginx"/>
+    <meta property="article:publisher" content="https://facebook.com/aspect19">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dealing with silent failures">
+    <meta name="twitter:description" content="Your code isn&apos;t as good as you think it is, and that&apos;s OK.">
+    <meta name="twitter:url" content="https://michaelgreenhill.net/dealing-with-silent-failures/">
+    <meta name="twitter:image" content="/images/failing2fail.png">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Michael Greenhill">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="it, ddos, nginx">
 
     <script type="application/ld+json">
       {
@@ -153,8 +161,8 @@
     <div class="site-nav-right">
         <div class="social-links">
             <a class="social-link social-link-fb" href="https://facebook.com/aspect19" title="Facebook" target="_blank" rel="noopener">
-                <svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"></path>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z"/>
                 </svg>
             </a>
         </div>
@@ -206,22 +214,22 @@
               </div>
 
               
-              <div class="heroimage" style="background-image: url(/images/failing2fail.png);"><div><img src="/images/failing2fail.png"></div></div>
+              <div class="heroimage" style="background-image: url(/images/failing2fail.png);"><div><picture><source srcset="/images/failing2fail.250.webp 250w, /images/failing2fail.400.webp 400w, /images/failing2fail.550.webp 550w, /images/failing2fail.700.webp 700w, /images/failing2fail.850.webp 850w, /images/failing2fail.1000.webp 1000w, /images/failing2fail.1150.webp 1150w, /images/failing2fail.1280.webp 1280w" sizes="100vw" type="image/webp"><source srcset="/images/failing2fail.250.png 250w, /images/failing2fail.400.png 400w, /images/failing2fail.550.png 550w, /images/failing2fail.700.png 700w, /images/failing2fail.850.png 850w, /images/failing2fail.1000.png 1000w, /images/failing2fail.1150.png 1150w, /images/failing2fail.1280.png 1280w" sizes="100vw" type="image/png"><img src="/images/failing2fail.png" height="720" width="1280" loading="lazy"></picture></div></div>
               
 
               <div class="post-content">
-                <p class="subtitle">Your code isn&#39;t as good as you think it is, and that&#39;s OK.</p>
+                <p class="subtitle">Your code isn&apos;t as good as you think it is, and that&apos;s OK.</p>
                 
                 <aside class="post-aside">
                   <strong>Contents</strong>
                   <nav class="toc"><ol><li><a href="#living-on-hopes-and-prayers">Living on hopes and prayers</a></li><li><a href="#so-how-can-i-manage-silent-failures%3F">So how can I manage silent failures?</a><ol><li><a href="#explicit-failures">Explicit failures</a></li><li><a href="#implicit-failures">Implicit failures</a></li></ol></li><li><a href="#what-about-the-silent-part%3F">What about the silent part?</a><ol><li><a href="#request-body">Request Body</a></li><li><a href="#request-headers">Request Headers</a></li><li><a href="#generating-a-jira-api-token">Generating a JIRA API token</a></li></ol></li></ol></nav>
                 </aside>
                 <h2 id="living-on-hopes-and-prayers">Living on hopes and prayers <a class="anchor-link" href="#living-on-hopes-and-prayers">#</a></h2>
-<p>How many of you manually check a mission-critical script or task every day to ensure it’s actually run? And, how many of you aren’t checking it, instead blindly trusting that the Gods of Computing have allowed your peasant code to run without interference?</p>
-<p>The concept of <strong>silent failures</strong> should not be new to anyone reading this blog. Shit happens; servers crash, internet connections drop out, HR changes the bloody organisational structure and breaks your automated onboarding… Shit. Happens.</p>
-<p>When was the last time you checked that your VM backups were actually running…? <em>Ahh; the distant sound of panicked typing.</em></p>
+<p>How many of you manually check a mission-critical script or task every day to ensure it&#x2019;s actually run? And, how many of you aren&#x2019;t checking it, instead blindly trusting that the Gods of Computing have allowed your peasant code to run without interference?</p>
+<p>The concept of <strong>silent failures</strong> should not be new to anyone reading this blog. Shit happens; servers crash, internet connections drop out, HR changes the bloody organisational structure and breaks your automated onboarding&#x2026; Shit. Happens.</p>
+<p>When was the last time you checked that your VM backups were actually running&#x2026;? <em>Ahh; the distant sound of panicked typing.</em></p>
 <h2 id="so-how-can-i-manage-silent-failures%3F">So how can I manage silent failures? <a class="anchor-link" href="#so-how-can-i-manage-silent-failures%3F">#</a></h2>
-<p>There’s a multitude of different ways you can achieve this, but my preferred solution is via a simple web service called <a href="https://healthchecks.io/">Healthchecks.io</a></p>
+<p>There&#x2019;s a multitude of different ways you can achieve this, but my preferred solution is via a simple web service called <a href="https://healthchecks.io/">Healthchecks.io</a></p>
 <p>The premise is simple:</p>
 <ol>
 <li>Create a check, which gives you a UUID</li>
@@ -231,10 +239,10 @@
 </ol>
 <p>There are two key components of addressing silent failures, which <a href="http://Healthchecks.io">Healthchecks.io</a> handles well:</p>
 <h3 id="explicit-failures">Explicit failures <a class="anchor-link" href="#explicit-failures">#</a></h3>
-<p>Through their API it’s possible to send an <strong>explicit failure</strong> alert, indicating that your code has encountered an error and has goofed up. This would typically be handled in a <code>try/catch</code> block:</p>
-<pre class="language-powershell"><code class="language-powershell"><span class="token variable">$script</span>:HealthcheckUrl = <span class="token string">"https://hc-ping.com/your-uuid-here"</span><br><span class="token keyword">try</span> <span class="token punctuation">{</span><br>    <span class="token comment"># We haven't provided an identifier and we have supplied an invalid parameter; this will fail</span><br>    <span class="token function">Set</span><span class="token operator">-</span>AdUser <span class="token operator">-</span>Path <span class="token string">"blah"</span><br>    <span class="token function">Invoke-RestMethod</span> <span class="token variable">$script</span>:HealthcheckUrl<br><span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span><br>    <span class="token function">Invoke-RestMethod</span> <span class="token string">"<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$script</span>:HealthcheckUrl<span class="token punctuation">)</span></span>/fail"</span><br><span class="token punctuation">}</span></code></pre>
+<p>Through their API it&#x2019;s possible to send an <strong>explicit failure</strong> alert, indicating that your code has encountered an error and has goofed up. This would typically be handled in a <code>try/catch</code> block:</p>
+<pre class="language-powershell"><code class="language-powershell"><span class="token variable">$script</span>:HealthcheckUrl = <span class="token string">&quot;https://hc-ping.com/your-uuid-here&quot;</span><br><span class="token keyword">try</span> <span class="token punctuation">{</span><br>    <span class="token comment"># We haven&apos;t provided an identifier and we have supplied an invalid parameter; this will fail</span><br>    <span class="token function">Set</span><span class="token operator">-</span>AdUser <span class="token operator">-</span>Path <span class="token string">&quot;blah&quot;</span><br>    <span class="token function">Invoke-RestMethod</span> <span class="token variable">$script</span>:HealthcheckUrl<br><span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span><br>    <span class="token function">Invoke-RestMethod</span> <span class="token string">&quot;<span class="token function">$<span class="token punctuation">(</span><span class="token variable">$script</span>:HealthcheckUrl<span class="token punctuation">)</span></span>/fail&quot;</span><br><span class="token punctuation">}</span></code></pre>
 <h3 id="implicit-failures">Implicit failures <a class="anchor-link" href="#implicit-failures">#</a></h3>
-<p>Through the magic of scheduling we can also alert on an <strong>implicit failure</strong> - the code was <em>supposed</em> to run, but since we never received an explicit success ping we can assume it’s broken and, therefore, have an <em>implicit failure</em> on our hand.</p>
+<p>Through the magic of scheduling we can also alert on an <strong>implicit failure</strong> - the code was <em>supposed</em> to run, but since we never received an explicit success ping we can assume it&#x2019;s broken and, therefore, have an <em>implicit failure</em> on our hand.</p>
 <p>This is particularly useful in situations such as:</p>
 <ul>
 <li>Cron/scheduler failing to start</li>
@@ -242,20 +250,20 @@
 <li>Script failing to complete and explicit failures have not been added</li>
 </ul>
 <p>We can also flag an implicit failure by measuring <strong>script runtime</strong>: this is very useful when you have a tightly-coupled set of scripts or tasks that rely heavily on tasks completing within a pre-defined timeframe. For example; assume you have a MSSQL maintenance plan to back up your database; this runs at 2 AM and typically takes 45 minutes to complete. At 3 AM another task copies that backup to a different storage medium in a different location (remember your <a href="https://www.backblaze.com/blog/the-3-2-1-backup-strategy/">3-2-1 backup rule</a>, folks).</p>
-<p>What happens if the MSSQL maintenance plan hasn’t finished by 3 AM? This would be an implicit failure, as a downstream dependency (your copy task) will fail.</p>
+<p>What happens if the MSSQL maintenance plan hasn&#x2019;t finished by 3 AM? This would be an implicit failure, as a downstream dependency (your copy task) will fail.</p>
 <h2 id="what-about-the-silent-part%3F">What about the silent part? <a class="anchor-link" href="#what-about-the-silent-part%3F">#</a></h2>
-<p>For starters it interacts with all the standard alerting and messaging services (such as PagerDuty, OpsGenie, Slack, and Teams), but it also exposes a <strong>webhook function</strong>. With this it’s possible to create any kind of customised alert.</p>
+<p>For starters it interacts with all the standard alerting and messaging services (such as PagerDuty, OpsGenie, Slack, and Teams), but it also exposes a <strong>webhook function</strong>. With this it&#x2019;s possible to create any kind of customised alert.</p>
 <p>For example; want to push a ticket to JIRA Service Desk when something mission-critical fails?</p>
-<p><img src="/images/healthchecks-io-webook.png" alt="Test"></p>
+<p><picture><source srcset="/images/healthchecks-io-webook.250.webp 250w, /images/healthchecks-io-webook.400.webp 400w, /images/healthchecks-io-webook.550.webp 550w, /images/healthchecks-io-webook.700.webp 700w, /images/healthchecks-io-webook.850.webp 850w, /images/healthchecks-io-webook.1000.webp 1000w, /images/healthchecks-io-webook.1150.webp 1150w, /images/healthchecks-io-webook.1194.webp 1194w" sizes="100vw" type="image/webp"><source srcset="/images/healthchecks-io-webook.250.png 250w, /images/healthchecks-io-webook.400.png 400w, /images/healthchecks-io-webook.550.png 550w, /images/healthchecks-io-webook.700.png 700w, /images/healthchecks-io-webook.850.png 850w, /images/healthchecks-io-webook.1000.png 1000w, /images/healthchecks-io-webook.1150.png 1150w, /images/healthchecks-io-webook.1194.png 1194w" sizes="100vw" type="image/png"><img src="/images/healthchecks-io-webook.png" alt="Test" height="895" width="1194" loading="lazy"></picture></p>
 <h3 id="request-body">Request Body <a class="anchor-link" href="#request-body">#</a></h3>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">"requestParticipants"</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token string">"JIRA-user-ID"</span><br>  <span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token property">"serviceDeskId"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span><br>  <span class="token property">"requestTypeId"</span><span class="token operator">:</span> <span class="token string">"10"</span><span class="token punctuation">,</span><br>  <span class="token property">"requestFieldValues"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"summary"</span><span class="token operator">:</span> <span class="token string">"$NAME is $STATUS"</span><span class="token punctuation">,</span><br>    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"The automated health check $NAME is $STATUS as of $NOW\n\nhttps://healthchecks.io/projects/Your-Healthchecks-Project-ID/checks/\n\n$TAGS"</span><span class="token punctuation">,</span><br>    <span class="token property">"customfield_13052"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><br>        <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"The value of a custom JIRA field"</span><br>    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token property">"priority"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"3 - Medium"</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span><br>  <span class="token property">&quot;requestParticipants&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><br>    <span class="token string">&quot;JIRA-user-ID&quot;</span><br>  <span class="token punctuation">]</span><span class="token punctuation">,</span><br>  <span class="token property">&quot;serviceDeskId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5&quot;</span><span class="token punctuation">,</span><br>  <span class="token property">&quot;requestTypeId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10&quot;</span><span class="token punctuation">,</span><br>  <span class="token property">&quot;requestFieldValues&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">&quot;summary&quot;</span><span class="token operator">:</span> <span class="token string">&quot;$NAME is $STATUS&quot;</span><span class="token punctuation">,</span><br>    <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;The automated health check $NAME is $STATUS as of $NOW\n\nhttps://healthchecks.io/projects/Your-Healthchecks-Project-ID/checks/\n\n$TAGS&quot;</span><span class="token punctuation">,</span><br>    <span class="token property">&quot;customfield_13052&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><br>        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;The value of a custom JIRA field&quot;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>    <span class="token property">&quot;priority&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3 - Medium&quot;</span><br>    <span class="token punctuation">}</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h3 id="request-headers">Request Headers <a class="anchor-link" href="#request-headers">#</a></h3>
 <pre><code>Accept: application/json
 Authorization: Basic Your-JIRA-API-Key
 Content-Type: application/json
 </code></pre>
 <h3 id="generating-a-jira-api-token">Generating a JIRA API token <a class="anchor-link" href="#generating-a-jira-api-token">#</a></h3>
-<p>It’s a long-winded process: follow the instructions over at <a href="https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/">https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/</a> for enabling basic authentication for JIRA.</p>
+<p>It&#x2019;s a long-winded process: follow the instructions over at <a href="https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/">https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/</a> for enabling basic authentication for JIRA.</p>
 <p>There you go; by enabling monitoring on your scripts or tasks you can tame the silent failures beast.</p>
 <p><em>Side note: enabling healthchecks is not an excuse to not check your backups. You should still be testing the validity and restorability of your backups; otherwise, they may as well be useless!</em></p>
 
@@ -270,10 +278,10 @@ Content-Type: application/json
       <footer class="site-footer outer">
     <div class="inner">
         <p>The views on this website are entirely my own and do not reflect those of my employer, my country, or the small alien that controls this flesh prison.</p>
-        <p>All text copyright &copy; Michael Greenhill.</p>
+        <p>All text copyright &#xA9; Michael Greenhill.</p>
     </div>
 </footer>
 
     </div>
-  </body>
-</html>
+  
+</body></html>
