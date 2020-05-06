@@ -3,6 +3,7 @@ title: Cloudflare - is it worth it?
 subtitle: I don't have time for your slow website proxying!
 permalink: "{{ title | slug }}/"
 heroimage: /images/cloudflare1250-1.png
+heroimage_alt: Cloudflare with 'cloud' crossed out and replaced with 'slow' in Comic Sans font face
 layout: post
 tags:
   - post

@@ -3,6 +3,7 @@ title: Making my homelab smarter - Part 4
 subtitle: Jazz Hands intensifies
 permalink: "{{ title | slug }}/"
 heroimage: /images/1_dQ24NWLrTpLIL9Kv2SEHhA.png
+heroimage_alt: Stacks of containers falling overboard
 layout: post
 tags:
   - post

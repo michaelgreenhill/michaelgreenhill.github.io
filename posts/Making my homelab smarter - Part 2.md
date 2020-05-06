@@ -3,6 +3,7 @@ title: Making my homelab smarter - Part 2
 subtitle: Get routed!
 permalink: "{{ title | slug }}/"
 heroimage: /images/1_1SYWH-QudwNvXrH1VUAlhw.png
+heroimage_alt: A screenshot from a pfSense firewall table
 layout: post
 tags:
   - post

@@ -3,6 +3,7 @@ title: AWS Automation Wizardry
 subtitle: SSM, EC2, IAM, CloudWatch, and other buzzwords.
 permalink: "{{ title | slug }}/"
 heroimage: /images/futurama_01_0105_going_robot_640x360.jpg
+heroimage_alt: Fry and Leela from Futurama dressed up as robots
 layout: post
 tags:
   - post

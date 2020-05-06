@@ -3,6 +3,7 @@ title: Dealing with silent failures
 subtitle: Your code isn't as good as you think it is, and that's OK.
 permalink: "{{ title | slug }}/"
 heroimage: /images/failing2fail.png
+heroimage_alt: Tom Haverford from Parks and Recreation commenting on Failing to Fail
 layout: post
 tags:
   - post

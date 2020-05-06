@@ -3,6 +3,7 @@ title: Lessons learned from a DDoS attack
 subtitle: Our website got nay-nayed
 permalink: "{{ title | slug }}/"
 heroimage: /images/ddos.png
+heroimage_alt: Fisher Price My First DDoS
 layout: post
 tags:
   - post

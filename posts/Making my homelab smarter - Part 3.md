@@ -3,6 +3,7 @@ title: Making my homelab smarter - Part 3
 subtitle: Compu-Global-Hyper-Mega-Net
 permalink: "{{ title | slug }}/"
 heroimage: /images/1_F5iT46roUJaBhAOV3fJNjA.png
+heroimage_alt: A screenshot showing DHCPv6 addressing
 layout: post
 tags:
   - post

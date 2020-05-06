@@ -3,6 +3,7 @@ title: Making my homelab smarter - Part 1
 subtitle: Or, how I NUC'd everything up.
 permalink: "{{ title | slug }}/"
 heroimage: /images/1_omi0RFCCZNWaUQGTgcnjCA.png
+heroimage_alt: Network diagram of my home lab
 layout: post
 tags:
   - post

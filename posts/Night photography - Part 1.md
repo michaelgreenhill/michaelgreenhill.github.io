@@ -3,6 +3,7 @@ title: Night photography - Part 1
 subtitle: A look into my photographic process, starting with natural lighting.
 permalink: "{{ title | slug }}/"
 heroimage: /images/38686053_10156533096574291_7731714059409555456_o.jpg
+heroimage_alt: A photo of myself presenting at the Railway Photography Forum
 layout: post
 tags:
   - post
