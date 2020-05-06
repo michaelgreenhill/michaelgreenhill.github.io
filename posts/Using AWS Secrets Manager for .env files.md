@@ -2,7 +2,7 @@
 title: Using AWS Secrets Manager for .env files
 subtitle: Extracting secrets from AWS Secrets Manager and dumping to .env files, for fun and profit!
 permalink: "{{ title | slug }}/"
-heroimage: https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/the-outcome-economy-2-638.jpg
+heroimage: /images/the-outcome-economy-2-638.jpg
 layout: post
 tags:
   - post

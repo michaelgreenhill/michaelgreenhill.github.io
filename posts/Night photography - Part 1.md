@@ -2,7 +2,7 @@
 title: Night photography - Part 1
 subtitle: A look into my photographic process, starting with natural lighting.
 permalink: "{{ title | slug }}/"
-heroimage: https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/38686053_10156533096574291_7731714059409555456_o.jpg
+heroimage: /images/38686053_10156533096574291_7731714059409555456_o.jpg
 layout: post
 tags:
   - post
@@ -28,7 +28,7 @@ It’s only in the last five years that my passion for night photography has rea
 Let’s kick off with natural lighting. This can be anything from sunset and sunrise, to a full moon at midnight: if the lighting works, let’s try to use it.
 
 <figure class='fullwidth'>
-  <img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/IMG_4634.JPG">
+  <img src="/images/IMG_4634.JPG">
   <figcaption>1/500s | f/6.3 | ISO 100</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ For this shot I was perfectly happy to sacrifice detail in the locomotive, as I 
 There are many reasons why I chose this photo to share, but my main reason was to demonstrate to you how different lighting conditions can dramatically alter a photo. In this example, the flare from the setting sun has cast some purple hues in the smoke erupting from the chimney. Further down the track the rails are picked out before disappearing into a haze, and the intricate patterns in the clouds are highlighted by the diffused sun.
 
 <figure class='fullwidth'>
-  <img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/MG-Box030-Slide014---R711-departing-St.-Arnaud-1999-04-04.JPG">
+  <img src="/images/MG-Box030-Slide014---R711-departing-St.-Arnaud-1999-04-04.JPG">
   <figcaption>A scanned slide of R711 departing St. Arnaud back in July 1999.</figcaption>
 </figure>
 
@@ -50,7 +50,7 @@ A trick I like to use is selecting an autofocus point on my camera and training 
 Glint shots such as this are a personal favourite of mine: they tend to hide the some of the distractions in a scene while simultaneously picking out other parts of interest. Picture this as a midday shot with high sun: the smoke would still make for an interesting sight but, for me at least, it would lose some of its magic.
 
 <figure class='fullwidth'>
-  <img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/MG-Box033-Slide037.jpg">
+  <img src="/images/MG-Box033-Slide037.jpg">
   <figcaption>3801 leads 3830 through western Victoria in April 2000.</figcaption>
 </figure>
 
@@ -61,14 +61,14 @@ In a scene like this it’s tempting to go for a tighter crop. I chose to go for
 These last two photos were taken on Kodachrome film and scanned on a Plustek Opticfilm slide scanner.
 
 <figure class='fullwidth'>
-  <img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/IMG_7087.jpg">
+  <img src="/images/IMG_7087.jpg">
   <figcaption>12A leaves Menzies Creek with a dinner train for Nobelius Siding.</figcaption>
 </figure>
 
 Making use of the full moon, I took this long exposure of 12A leaving Menzies Creek one night on a dinner train. It’s not one of my favourite photos, but I’ve included it tonight to demonstrate the stunning effect a full moon can have on the sky in a night photo. For reference, this was taken at 7:30 pm on an April night – well after the sun had set.
 
 <figure class='fullwidth'>
-  <img src="https://s3-ap-southeast-2.amazonaws.com/michaelgreenhill-net/cdn/2020/02/IMG_7761.jpg">
+  <img src="/images/IMG_7761.jpg">
   <figcaption>Y112 sits at Ballarat station.</figcaption>
 </figure>
 
