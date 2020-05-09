@@ -29,9 +29,9 @@ module.exports = function (eleventyConfig) {
     },
     images: {
       resize: {
-        min: 250, // Minimum width to resize an image to
-        max: 1500, // Maximum width to resize an image to
-        step: 150, // Width difference between each resized image
+        min: 320, // Minimum width to resize an image to
+        max: 2560, // Maximum width to resize an image to
+        step: 320, // Width difference between each resized image
       },
       gifToVideo: false, // Convert GIFs to MP4 videos
       sizes: '100vw', // Default image `sizes` attribute

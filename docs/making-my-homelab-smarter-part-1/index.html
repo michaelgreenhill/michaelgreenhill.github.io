@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="/css/prism-dracula.css?v=4520dcfe35ffae83c7c2e6cb6081528d">
 <link rel="shortcut icon" href="/favicon.ico?v=1429123ad6a04f8249a06b6767130736" type="image/x-icon">
 
-<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=694ff6a2890c6fb5acc50a70a8599f08">
+<link rel="alternate" type="application/atom+xml" title="Michael Greenhill" href="/feed.xml?v=907495db5f2848ae9a89ad7071c46789">
 
 
 
@@ -195,7 +195,7 @@
               </div>
 
               
-              <div class="heroimage" style="background-image: url(/images/1_omi0RFCCZNWaUQGTgcnjCA.png);"><div><picture><source srcset="/images/1_omi0RFCCZNWaUQGTgcnjCA.250.webp 250w, /images/1_omi0RFCCZNWaUQGTgcnjCA.400.webp 400w, /images/1_omi0RFCCZNWaUQGTgcnjCA.550.webp 550w, /images/1_omi0RFCCZNWaUQGTgcnjCA.551.webp 551w" sizes="100vw" type="image/webp"><source srcset="/images/1_omi0RFCCZNWaUQGTgcnjCA.250.png 250w, /images/1_omi0RFCCZNWaUQGTgcnjCA.400.png 400w, /images/1_omi0RFCCZNWaUQGTgcnjCA.550.png 550w, /images/1_omi0RFCCZNWaUQGTgcnjCA.551.png 551w" sizes="100vw" type="image/png"><img src="/images/1_omi0RFCCZNWaUQGTgcnjCA.png" height="341" width="551" loading="lazy"></picture></div></div>
+              <div class="heroimage" style="background-image: url(/images/1_omi0RFCCZNWaUQGTgcnjCA.png);"><div><picture><source srcset="/images/1_omi0RFCCZNWaUQGTgcnjCA.551.webp 551w" sizes="100vw" type="image/webp"><source srcset="/images/1_omi0RFCCZNWaUQGTgcnjCA.551.png 551w" sizes="100vw" type="image/png"><img src="/images/1_omi0RFCCZNWaUQGTgcnjCA.png" height="341" width="551" loading="lazy"></picture></div></div>
               
 
               <div class="post-content">
@@ -249,7 +249,7 @@ $32</li>
 <p>In addition, I also had a Ubiquiti EdgeRouter X which I configured in Layer-2 switching mode, to provide the VLANs necessary for a single-NIC router.</p>
 <h3 id="the-topology">The topology <a class="anchor-link" href="#the-topology">#</a></h3>
 <p>As you can see from the diagram below, the pfSense router is a router-on-a-stick; that is, it has one interface carrying traffic separated by VLANs.</p>
-<p><picture><source srcset="/images/1_omi0RFCCZNWaUQGTgcnjCA.250.webp 250w, /images/1_omi0RFCCZNWaUQGTgcnjCA.400.webp 400w, /images/1_omi0RFCCZNWaUQGTgcnjCA.550.webp 550w, /images/1_omi0RFCCZNWaUQGTgcnjCA.551.webp 551w" sizes="100vw" type="image/webp"><source srcset="/images/1_omi0RFCCZNWaUQGTgcnjCA.250.png 250w, /images/1_omi0RFCCZNWaUQGTgcnjCA.400.png 400w, /images/1_omi0RFCCZNWaUQGTgcnjCA.550.png 550w, /images/1_omi0RFCCZNWaUQGTgcnjCA.551.png 551w" sizes="100vw" type="image/png"><img src="/images/1_omi0RFCCZNWaUQGTgcnjCA.png" alt="Magical packet mystery tour" height="341" width="551" loading="lazy"></picture></p>
+<p><picture><source srcset="/images/1_omi0RFCCZNWaUQGTgcnjCA.551.webp 551w" sizes="100vw" type="image/webp"><source srcset="/images/1_omi0RFCCZNWaUQGTgcnjCA.551.png 551w" sizes="100vw" type="image/png"><img src="/images/1_omi0RFCCZNWaUQGTgcnjCA.png" alt="Magical packet mystery tour" height="341" width="551" loading="lazy"></picture></p>
 <p>The ADSL router is the POS Asus DSL-AC68U &#x2014; not configured for bridge mode, because it doesn&#x2019;t support it &#x2014; but with everything disabled (DHCP, NAT, firewalled to the nth degree, etc) and with PPPoE forwarding enabled.</p>
 <p>Frustratingly, I still need to maintain a PPPoE connection on the Asus router for PPPoE forwarding to be stable. Without a valid PPPoE connection, the pfSense router can create a PPPoE connection on its own, but it drops after a few seconds. Every. Time.</p>
 <h3 id="but-you-had-an-edgerouter-x%2C-why-didn%E2%80%99t-you-use-it-as-a-router%3F">But you had an EdgeRouter X, why didn&#x2019;t you use it as a router? <a class="anchor-link" href="#but-you-had-an-edgerouter-x%2C-why-didn%E2%80%99t-you-use-it-as-a-router%3F">#</a></h3>
