@@ -29,7 +29,7 @@ aws s3 cp \
   --metadata-directive="REPLACE" \
   s3://michaelgreenhill-net/service-worker.js s3://michaelgreenhill-net/service-worker.js
 
-printf "\n updating service worker cache-control\n"
+printf "\n updating index.html cache-control\n"
 aws s3 cp \
   --only-show-errors \
   --acl public-read \
@@ -37,3 +37,12 @@ aws s3 cp \
   --cache-control "max-age=3600" \
   --metadata-directive="REPLACE" \
   s3://michaelgreenhill-net/index.html s3://michaelgreenhill-net/index.html
+
+printf "\n updating feed.xml cache-control\n"
+aws s3 cp \
+  --only-show-errors \
+  --acl public-read \
+  --region ap-southeast-2 \
+  --cache-control "max-age=3600" \
+  --metadata-directive="REPLACE" \
+  s3://michaelgreenhill-net/feed.xml s3://michaelgreenhill-net/feed.xml
