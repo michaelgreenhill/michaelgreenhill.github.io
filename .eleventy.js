@@ -97,6 +97,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('favicon.ico');
   eleventyConfig.addPassthroughCopy('robots.txt');
+  eleventyConfig.addPassthroughCopy('manifest.json');
   
   eleventyConfig.addPassthroughCopy('css', function () {
     return {
@@ -105,6 +106,12 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy('images', function () {
+    return {
+      passthroughFileCopy: true
+    }
+  });
+
+  eleventyConfig.addPassthroughCopy('favico', function () {
     return {
       passthroughFileCopy: true
     }
