@@ -44,6 +44,7 @@ div.post-grid {
     display: grid;
     grid-gap: 2em;
     margin-top: 4rem;
+    margin-bottom: 4rem;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto;
 }
@@ -52,6 +53,14 @@ div.post-grid article.post-card {
     padding: 0;
     margin: 0;
     border-bottom: 0;
+}
+
+.post-card-excerpt {
+    color: #364044;
+}
+
+.post-card-byline-content {
+    color: #4d5b61; 
 }
 
 @media (max-width: 500px) {

@@ -21,6 +21,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginTOC);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginPWA);
+  
+  const cacheBusterOptions = {
+    "outputDirectory": "./docs"
+  };
+
+  // disabled due to incompatibilities with service workers
+  //eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
   eleventyConfig.addPlugin(pluginLocalRespimg, {
     folders: {
@@ -34,7 +41,7 @@ module.exports = function (eleventyConfig) {
         step: 320, // Width difference between each resized image
       },
       gifToVideo: false, // Convert GIFs to MP4 videos
-      sizes: '100vw', // Default image `sizes` attribute
+      sizes: '(max-width: 600px) 500px, (max-width: 820px) 800px, 1040px', // Default image `sizes` attribute
       lazy: true, // Include `loading="lazy"` attribute for images
       additional: [
         // Globs of additional images to optimize (won't be resied)
@@ -67,12 +74,6 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.setUseGitIgnore(false);
-  
-  const cacheBusterOptions = {
-    "outputDirectory": "./docs"
-  };
-
-  eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
   eleventyConfig.addLayoutAlias('single', 'layouts/single.njk');
