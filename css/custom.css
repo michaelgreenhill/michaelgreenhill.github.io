@@ -301,4 +301,12 @@ div.grid-container .heroimage {
     aside.post-aside {
         background-color: #333; 
     }
+
+    .post-card-excerpt {
+        color: whitesmoke;
+    }
+    
+    .post-card-byline-content {
+        color: #ddd; 
+    }
 }
