@@ -111,7 +111,7 @@ and the attributes from one single parent device.
 
 We can grab the `product` and `serial` attributes (and even the `manufacturer` if you're feeling fancy) and use this to identify our device.
 
-Nextwe, we need to create a udev rule. Following the [Debian udev guide](https://wiki.debian.org/udev) - and correcting file/folder paths based on the inevitable variations between Linux flavours - add the following to `/lib/udev/rules.d/z21_persistent-local.rules`
+Next, we need to create a udev rule. Following the [Debian udev guide](https://wiki.debian.org/udev) - and correcting file/folder paths based on the inevitable variations between Linux flavours - add the following to `/lib/udev/rules.d/z21_persistent-local.rules`
 
 ```
 ATTR{product}=="RTL2838UHIDIR",ATTR{serial}=="00000001",SYMLINK+="rtl433"
