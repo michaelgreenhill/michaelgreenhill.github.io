@@ -342,7 +342,7 @@ div.grid-container .heroimage {
 }
 
 @media (prefers-color-scheme: dark) {
-    aside.post-aside, aside.post-lede {
+    aside.post-aside, aside.post-lede, aside.ingredients {
         background-color: #333; 
     }
 
