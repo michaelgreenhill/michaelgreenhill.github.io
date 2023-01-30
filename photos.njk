@@ -1,0 +1,14 @@
+---
+layout: layouts/single.njk
+permalink: /photos/
+title: Photography
+eleventyNavigation:
+  key: Photos
+  order: 6
+tag: page
+lede: |-
+   A bunch of assorted thoughts and epic photo adventures.
+---
+
+{% set postslist = collections.photography %}
+{% include "postlist.njk" %}

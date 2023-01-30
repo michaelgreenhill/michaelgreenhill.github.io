@@ -60,8 +60,8 @@
         },
         "headline": "{{ title }}",
         "url": "{{ site.url }}/{{ title | slug }}/",
-        "datePublished": "{{ date | rssDate }}",
-        "dateModified": "{{ date | rssDate }}",
+        {% if date %}"datePublished": "{{ date | rssDate }}",
+        "dateModified": "{{ date | rssDate }}",{% endif %}
         "image": {
           "@type": "ImageObject",
           "url": "{{ heroimage }}"
@@ -108,10 +108,20 @@
               <div class="post-content">
                 <p class="subtitle">{{ subtitle }}</p>
                 
-                <aside class="post-aside">
-                  <strong>Contents</strong>
-                  {{ content | toc | safe }}
-                </aside>
+                <div class="post-top-content">
+                  <aside class="post-aside">
+                    <strong>Contents</strong>
+                    {{ content | toc | safe }}
+                  </aside>
+
+                  {% if ingredients %}
+                  <aside class="ingredients">
+                    <strong>Ingredients</strong>
+                    {{ ingredients | markdownify | safe }}
+                  </aside>
+                  {% endif %}
+                </div>
+                
                 {{ content | safe }}
               </div>
             </section>

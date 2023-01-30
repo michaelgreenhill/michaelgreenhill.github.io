@@ -1,0 +1,14 @@
+---
+layout: layouts/single.njk
+permalink: /it/
+title: Rambling IT nonsense
+eleventyNavigation:
+  key: IT
+  order: 4
+tag: page
+lede: |-
+  In my role of a Solution Architect I often find myself thrown into weird and confusing problems at work. As I have the memory of a goldfish (I've probably mentioned that elsewhere here...) - or because maybe you're not interested in my cooking or photography or other assorted half-cocked ramblings - here's a distilled selection of IT-related posts.
+---
+
+{% set postslist = collections.it %}
+{% include "postlist.njk" %}

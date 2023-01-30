@@ -54,20 +54,18 @@
             "width": 500,
             "height": 500
           },
-          "url": "{{ site.url }}/author/michael/",
+          "url": "{{ site.url }}/",
           "sameAs": []
         },
         "headline": "{{ title }}",
         "url": "{{ site.url }}/{{ title | slug }}/",
-        "datePublished": "2020-02-22T04:58:36.000Z",
-        "dateModified": "2020-02-22T04:58:36.000Z",
+        {% if date %}"datePublished": "{{ date | rssDate }}",
+        "dateModified": "{{ date | rssDate }}",{% endif %}
         "image": {
           "@type": "ImageObject",
-          "url": "{{ heroimage }}",
-          "width": 1280,
-          "height": 919
+          "url": "{{ heroimage }}"
         },
-        "keywords": "it, ddos, nginx",
+        "keywords": "{{ tags }}",
         "description": "{{ subtitle }}",
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -97,6 +95,18 @@
                 <h1>{{ renderData.title or title or metadata.title }}</h1>
                 {% if subtitle %}
                 <p>{{ subtitle }}</p>
+                {% endif %}
+
+                {% if lede %}
+                <aside class="post-lede">
+                  {{ lede | markdownify | safe }}
+                </aside>
+                {% endif %}
+
+                {% if ingredients %}
+                <aside class="post-lede">
+                  {{ ingredients | markdownify | safe }}
+                </aside>
                 {% endif %}
 
                 {% if tags %}

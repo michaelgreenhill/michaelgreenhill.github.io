@@ -133,7 +133,10 @@ module.exports = function (eleventyConfig) {
     level: [1, 2, 3, 4]
   }
 
-  eleventyConfig.setLibrary('md', markdownIt(options).use(markdownItAnchor, opts))
+  const md = markdownIt(options)
+  eleventyConfig.setLibrary('md', md.use(markdownItAnchor, opts))
+  eleventyConfig.addFilter('markdownify', (markdownString) =>
+    md.render(markdownString));
 
   return {
     dir: {
