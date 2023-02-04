@@ -1,3 +1,5 @@
+!.gitignore
+!docs/.empty
 _site/*
 docs/README*
 deploy/*
@@ -7,4 +9,5 @@ docs/node_modules/*
 docs/images/*
 package-lock.json
 .vscode/*
-secretsdocs/404 docs/404.html docs/about docs/archives docs/aws-automation-wizardry docs/bbq docs/cloudflare-is-it-worth-it docs/css docs/dealing-with-silent-failures docs/favico docs/favicon.ico docs/feed.xml docs/images docs/index.html docs/instrumenting-autoscaling-ec2-in-prometheus docs/instrumenting-autoscaling-ec2-instances-in-prometheus docs/it docs/lessons-learned-from-a-ddos-attack docs/making-my-homelab-smarter-part-1 docs/making-my-homelab-smarter-part-2 docs/making-my-homelab-smarter-part-3 docs/making-my-homelab-smarter-part-4 docs/manifest.json docs/night-photography-part-1 docs/page-list docs/persistent-addressing-for-usb-devices-in-linux docs/photos docs/README docs/robots.txt docs/service-worker.js docs/sitemap.xml docs/smoked-brisket-in-a-pit-boss-pellet-grill docs/tags docs/using-aws-secrets-manager-for-.env-files docs/workbox-v4.3.1
+secrets
+docs/*
