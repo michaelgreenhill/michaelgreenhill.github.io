@@ -11,7 +11,6 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginLocalRespimg = require('eleventy-plugin-local-respimg');
 const pluginPWA = require("eleventy-plugin-pwa");
 
-
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -27,7 +26,7 @@ module.exports = function (eleventyConfig) {
   };
 
   // disabled due to incompatibilities with service workers
-  //eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
+  eleventyConfig.addPlugin(cacheBuster(cacheBusterOptions));
 
   eleventyConfig.addPlugin(pluginLocalRespimg, {
     folders: {
